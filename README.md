@@ -1,25 +1,24 @@
 # Stream Studio
 
-A personal streaming setup combining reproducible camera and audio settings,
+## Overview
+
+Tom's personal streaming setup combines repeatable camera and audio settings,
 OBS scenes, keyboard controls, and a local service for backgrounds and overlays.
+Working emphasizes readable screen content; Talking emphasizes the face camera.
+Starting, Break, and Ending share an illustrated room, initially static and
+later extended with daylight, weather, and animation.
 
-The live layouts prioritize readable screen content and useful camera views.
-Starting, Break, and Ending share an illustrated room that will begin static
-and later gain animation, daylight, and weather-driven variations.
-
-## Current state
-
-Planning only. This repository does not yet contain runnable services, device
-presets, OBS exports, or installation commands. The first focus is adjusting
-and validating the face and overhead cameras.
+The repository currently contains documentation only. Initial camera tuning is
+recorded, but no preset is accepted. There are no runnable services, device
+presets, OBS exports, or installation commands yet.
 
 ## Documentation
 
-- [Project definition](docs/project/definition.md): purpose, agreed scope,
-  constraints, and success criteria.
-- [Current progress](docs/project/progress.md): verified state, open questions,
-  and the next useful action.
-- [Design brief](docs/design.md): hardware, layouts, implementation sequence,
-  and technical considerations.
+- [Project charter](docs/project/charter.md) defines the problem, value, success,
+  and agreed boundaries.
+- [Work index](docs/project/work.md) links the seven outcome briefs, their
+  statuses, and unresolved decisions.
+- [Camera experiments](docs/camera-experiments.md) preserves device inspection,
+  provisional findings, comparison limits, and the camera-tuning resume procedure.
 
 The technology stack, distribution approach, and license have not been selected.
