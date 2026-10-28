@@ -1,24 +1,23 @@
 # Stream Studio
 
-## Overview
+My personal streaming environment for sharing development, tools, and working
+practices on YouTube. The goal is to make streaming easier to prepare and
+operate, while keeping the work readable and giving viewers useful context.
 
-Tom's personal streaming setup combines repeatable camera and audio settings,
-OBS scenes, keyboard controls, and a local service for backgrounds and overlays.
-Working emphasizes readable screen content; Talking emphasizes the face camera.
-Starting, Break, and Ending share an illustrated room, initially static and
-later extended with daylight, weather, and animation.
+The project brings together camera and audio settings, OBS scenes, keyboard
+controls, and local backgrounds and overlays. It is tailored to my desktop and
+workflow, with setup guidance so I can restore it without starting from scratch.
 
-The repository currently contains documentation only. Initial camera tuning is
-recorded, but no preset is accepted. There are no runnable services, device
-presets, OBS exports, or installation commands yet.
+The repository currently contains project plans and camera experiment findings.
+Configuration and services will be added as the setup is developed and tested.
 
 ## Documentation
 
-- [Project charter](docs/project/charter.md) defines the problem, value, success,
-  and agreed boundaries.
-- [Work index](docs/project/work.md) links the seven outcome briefs, their
-  statuses, and unresolved decisions.
-- [Camera experiments](docs/camera-experiments.md) preserves device inspection,
-  provisional findings, comparison limits, and the camera-tuning resume procedure.
+- [Project charter](docs/project/charter.md): purpose, scope, and success criteria.
+- [Work index](docs/project/work.md): planned outcomes and current work.
+- [Camera experiments](docs/camera-experiments.md): findings and unresolved tuning.
 
-The technology stack, distribution approach, and license have not been selected.
+## License
+
+No license has been selected. This repository does not currently grant a
+third-party reuse license.
