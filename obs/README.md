@@ -1,14 +1,16 @@
-# OBS Working snapshot
+# OBS live-layout snapshot
 
-This directory preserves the saved Working scene graph and its output settings.
-It is a sanitized restoration starting point, not a full machine backup or a
-verified one-click restore. No live OBS settings were changed to create it.
+This directory preserves the Working and camera-led scene graph and its output
+settings. It is a sanitized restoration starting point, not a full machine backup
+or a verified one-click restore. No live OBS settings were changed to create it.
 
 ## Files and scope
 
-- `working-scenes.json` contains an OBS scene collection with four Working
-  variants and their required shared sources, transforms, colours, text styling,
-  filters, and source relationships.
+- `working-scenes.json` contains four Working variants and three camera-led
+  scenes: `Talking - Face Only`, `Talking - Desk and Face`, and
+  `Talking - Desk Only`. It preserves their shared sources, transforms, colours,
+  text styling, filters, and source relationships. The filename is retained from
+  the original Working-only snapshot.
 - `output-settings.ini` records an allowlisted subset of the active profile's
   video, streaming encoder, bitrate, and audio-format settings. It is a reference
   for manual setup, not a complete importable profile.
@@ -17,11 +19,16 @@ The snapshot uses a 2560 × 1440 canvas and output at 30 fps, software x264 with
 its veryfast preset, 13,500 Kbps video, and 160 Kbps audio. Audio format is 48 kHz
 stereo. These are saved settings, not proof of network capacity or performance.
 
-Only the Working setup and its dependencies are included. Other scenes, browser
-sources, scripts, timers, projectors, and existing hotkeys are excluded. There
-are no external image assets in this snapshot; the presentation uses native
-colour and text sources. Talking, Privacy behaviour, and their restoration are
-not delivered by this collection.
+Only Working, the three camera-led scenes, and their dependencies are included.
+Other scenes, browser sources, scripts, timers, projectors, and existing hotkeys
+are excluded. There are no external image assets; the presentation uses native
+colour and text sources. Privacy behaviour is not delivered by this collection.
+
+Face only fills the canvas and retains a hidden fullscreen border. Desk + face
+uses the full-canvas desk view with the face inset at x = 1934, y = 15, size
+611 × 344, matching Working. Desk only has the same desk framing without the
+inset. These camera-led scenes contain no branding or text. The saved transition
+is a 100 ms Fade. This is not an immediate Privacy transition.
 
 ## Privacy and local substitutions
 
@@ -59,7 +66,7 @@ activating a collection can replace the active composition and audio setup.
    font family used by the saved text sources. No third-party presentation
    plugin is required by the exported source graph.
 3. In OBS, use **Scene Collection → Import** to import `working-scenes.json` as
-   a separate collection named `Stream Studio - Working`. Inspect it before
+   a separate collection named `Stream Studio - Live Layouts`. Inspect it before
    selecting or activating it. Do not overwrite the existing live collection.
 4. Create or select an appropriate separate OBS profile and apply the values
    in `output-settings.ini` through Settings. Scene collection import alone does
@@ -74,9 +81,11 @@ activating a collection can replace the active composition and audio setup.
 7. Replace `example.com` and the generic topic with the intended public text.
    Configure any OBS service credentials or host-side controls separately in
    protected local configuration, never in these repository files.
-8. Verify all four Working variants at output size. Check full-monitor capture,
-   camera orientation and framing, the reserved right quarter, border alignment,
-   camera-off placeholders, topic and website text, and clipping. Check the
+8. Verify all four Working variants and the three camera-led scenes at output
+   size. Check full-monitor capture, camera orientation and framing, the reserved
+   right quarter, border alignment, camera-off placeholders, topic and website
+   text, and clipping. Confirm the hidden fullscreen face border, matching face
+   inset, and unchanged desk framing when switching desk variants. Check the
    audio sources separately. Do not treat cameras-off Working as Privacy.
 9. Before live use, verify OBS rendering/encoding statistics and YouTube playback
    under the intended workload. Successful import alone does not validate this.

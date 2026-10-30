@@ -45,9 +45,11 @@ varying with time of day; this is not a measured sustained minimum. The expected
 workload is a terminal with Herdr and subscription-backed AI tools, a web browser,
 and a music TUI, rather than local model inference or other heavy workloads.
 
-Talking makes the face camera dominant. Optional overlays support conversation;
-it does not need Working's sidebar, screen capture, or overhead arrangement.
-Neither scene uses the illustrated room background.
+Talking makes the face camera dominant. Its initial scene family also includes
+Desk + face and Desk only for demonstrations. Desk + face keeps the small face
+view in Working's upper-right position; Desk only removes that inset. None of
+these camera-led scenes uses Working's sidebar, screen capture, or an illustrated
+room. A left-side chat variant is deferred.
 
 Use Catppuccin Mocha and follow the visual guidance in
 `~/src/default/brand-identity/docs/brand/visual-usage.md` and `asset-handoff.md`.
@@ -60,6 +62,7 @@ lettering or changing its geometry. Reusable logo design remains in
 is acceptable where the full wordmark would be too small. For Working, Tom has
 chosen a plain website address as the only explicit identifier; a wordmark is
 not required, and refinement of the initial website treatment is deferred.
+The initial Talking and desk-camera scenes intentionally omit all branding.
 
 Shared sources or nested scenes are recommended where they avoid duplicating
 camera and filter configuration. Include a simple Privacy scene at this stage
@@ -84,8 +87,9 @@ separate outcomes in B004 and B006, not prerequisites for a usable initial layou
 - Shared camera and filter settings avoid unnecessary duplication, and saved
   scene configuration and verification guidance allow the layouts to be restored.
 - Explicit branding suits the selected layout and follows the existing identity.
-  Working may use only a plain website address; a final logo or wordmark is not
-  a prerequisite for usable scenes.
+  Working may use only a plain website address, while the initial Talking and
+  desk-camera scenes omit branding. A final logo or wordmark is not a
+  prerequisite for usable scenes.
 
 ## Open questions
 

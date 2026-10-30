@@ -39,3 +39,16 @@ This brief establishes the underlying audio setup and combined validation.
 - What audio hardware and existing OBS processing are in use?
 - What processing and validation conditions are needed for acceptable audio?
 - When should audio refinement happen relative to scene and service work?
+- Should cliamp music have a dedicated application-audio capture or routing path
+  independent of the selected desktop/default audio device? This is deferred
+  investigation, not an accepted implementation or part of the current layouts.
+
+## Reported issue for follow-up
+
+Tom reports that an OBS audio selection pointed to the Fifine microphone and
+music was absent for most of a stream. He changed that selection to Default.
+The affected OBS audio slot, actual routing, and effect of the correction have
+not been independently verified. Confirm these before choosing a solution;
+Default follows the system's device selection and is not a fixed music route.
+Check any future dedicated cliamp path for duplicate music capture and preserve
+the scene policy of muting only the microphone for Privacy.
