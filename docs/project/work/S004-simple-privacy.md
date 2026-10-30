@@ -1,7 +1,8 @@
 ---
 id: S004
-status: To do
+status: In progress
 parent: B003
+blocked_by: Current scene routing conflicts with explicit unmute on exit; output tests remain unverified.
 ---
 
 # Simple independent Privacy scene
@@ -29,18 +30,66 @@ a browser background or local presentation service.
 
 ## Tasks
 
-- [ ] Identify the actual stream microphone path and how to preserve its muted
-      state on exit until an explicit unmute.
-- [ ] Select a minimal static presentation and an OBS-compatible way to enforce
-      microphone mute on entering Privacy.
-- [ ] Implement and test entry, repeated entry, and exit with authorized sources
-      and audio checks, including initially muted and unmuted cases.
-- [ ] Check behaviour with the browser service unavailable and document manual use
-      and the remaining audio/privacy limitations.
+- [x] Select the static branded holding card and supply SVG and PNG assets.
+- [x] Inspect the saved scene graph and microphone routing, refresh the sanitized
+      snapshot, and document manual selection and current limitations.
+- [ ] Resolve the conflict between scene-specific microphone inclusion and the
+      required muted state after leaving Privacy. Do not change the criteria
+      without Tom's agreement.
+- [ ] Provide immediate Privacy entry rather than the saved 100 ms Fade, and
+      implement the agreed microphone policy.
+- [ ] Test composed video and output audio on entry, repeated entry, and exit
+      from initially muted and unmuted states, with the browser service absent.
 
 ## Open questions
 
-- Which mechanism can enforce the required microphone behaviour in this OBS setup?
+- Should the original explicit-unmute-on-exit requirement remain, or should Tom
+  approve automatic microphone return when switching to Working/Talking?
+- If explicit unmute remains required, which mechanism will enforce it without
+  depending on a browser service? Scripts and plugin installation are deferred.
+
+## Review
+
+The current implementation does not meet all existing acceptance criteria.
+Tom accepted the holding-card appearance and configured scene-specific audio,
+but has not reported the planned recording check. This review records interim
+findings at his request, not acceptance or a change to the criteria.
+
+The saved active collection and profile were inspected read-only. The
+[sanitized snapshot and manual guidance](../../../obs/README.md) now preserve
+Privacy and the shared microphone routing. Output settings remain 1440p30 and
+match the repository reference. No live scene, device, mute state, recording,
+broadcast, or plugin installation was changed for this review.
+
+- **Criterion 1, partial.** Local `PRIVACY` contains only the locked, opaque
+  2560 × 1440 holding-card image at 1:1 scale, with no screen, camera, browser,
+  or microphone dependency. The source is omitted, not muted. The saved
+  transition is a 100 ms Fade without a Privacy override, so immediate
+  concealment is not established. Actual composed output remains unverified.
+- **Criterion 2, structurally satisfied.** Privacy uses a local PNG and native
+  OBS Image source, without a Browser Source, local service, or stop-broadcast
+  action. Tom selected this static branded card. Operation with the service
+  unavailable has not been tested.
+- **Criterion 3, unmet.** Global Mic/Aux is absent. One unmuted PulseAudio
+  microphone source is reused once in each of the four Working and three
+  Talking scenes, and is absent from Privacy. No mute automation is configured.
+  Returning to a live scene includes the microphone again without explicit
+  unmute if it was unmuted before entry. Initially muted/unmuted and repeated
+  entry cases have not been tested in output audio.
+- **Criterion 4, unverified.** Desktop Audio remains global and unmuted in the
+  saved local collection; no dedicated music capture was added. Structure
+  preserves that path, but no recording, listening test, or composed-output
+  test was performed or reported. The export mutes desktop and microphone
+  sources for safe restoration, not as evidence of live Privacy muting.
+- **Criterion 5, documented.** The OBS guide describes manual scene selection,
+  Studio Mode's Program transition requirement, and audio limitations without
+  Vial. Manual operation has not been observed in a test.
+
+Before acceptance, resolve the microphone-return policy and immediate entry,
+then check actual output video and audio across entry, repeated entry, and
+exit from initially muted and unmuted states. Desktop audio/music must retain
+its intended state, and Privacy must remain usable without the browser service.
+Restoration import remains untested and belongs to S005.
 
 ## Boundaries
 

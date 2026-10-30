@@ -9,7 +9,8 @@ controls, and local backgrounds and overlays. It is tailored to my desktop and
 workflow, with setup guidance so I can restore it without starting from scratch.
 
 The repository contains project plans, camera experiment findings, and a
-sanitized OBS Working and Talking scene snapshot with restoration guidance.
+sanitized OBS Working, Talking, and Privacy scene snapshot with restoration
+guidance.
 Services and further configuration will be added as the setup is developed
 and tested.
 

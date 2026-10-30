@@ -363,9 +363,9 @@
         "text": "example.com",
         "font": {
           "face": "JetBrainsMono Nerd Font",
-          "style": "Italic",
+          "style": "Regular",
           "size": 100,
-          "flags": 2
+          "flags": 0
         },
         "color1": 4294235853,
         "color2": 4294235853
@@ -377,6 +377,58 @@
       "balance": 0.5,
       "enabled": true,
       "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "hotkeys": {},
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "private_settings": {}
+    },
+    {
+      "prev_ver": 537001986,
+      "name": "Privacy Card",
+      "uuid": "cc503758-4195-5c8c-87d6-316d9b61f257",
+      "id": "image_source",
+      "versioned_id": "image_source",
+      "settings": {
+        "file": "SELECT_PRIVACY_IMAGE"
+      },
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1.0,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "hotkeys": {},
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "private_settings": {}
+    },
+    {
+      "prev_ver": 537001986,
+      "name": "Microphone",
+      "uuid": "b900cec9-ad35-5baf-96a1-73ae15dcbc56",
+      "id": "pulse_input_capture",
+      "versioned_id": "pulse_input_capture",
+      "settings": {
+        "device_id": "SELECT_LOCAL_AUDIO_DEVICE"
+      },
+      "mixers": 255,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1.0,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": true,
       "push-to-mute": false,
       "push-to-mute-delay": 0,
       "push-to-talk": false,
@@ -1344,7 +1396,7 @@
       "id": "scene",
       "versioned_id": "scene",
       "settings": {
-        "id_counter": 15,
+        "id_counter": 18,
         "custom_size": false,
         "items": [
           {
@@ -1657,6 +1709,61 @@
             "scale_rel": {
               "x": 0.23867186903953552,
               "y": 0.23888888955116272
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            },
+            "private_settings": {}
+          },
+          {
+            "name": "Microphone",
+            "source_uuid": "b900cec9-ad35-5baf-96a1-73ae15dcbc56",
+            "visible": true,
+            "locked": false,
+            "rot": 0.0,
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "align": 5,
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "crop_left": 0,
+            "crop_top": 0,
+            "crop_right": 0,
+            "crop_bottom": 0,
+            "id": 17,
+            "group_item_backup": false,
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -1.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
             },
             "bounds": {
               "x": 0.0,
@@ -2039,7 +2146,7 @@
       "id": "scene",
       "versioned_id": "scene",
       "settings": {
-        "id_counter": 9,
+        "id_counter": 10,
         "custom_size": false,
         "items": [
           {
@@ -2316,6 +2423,61 @@
               "duration": 300
             },
             "private_settings": {}
+          },
+          {
+            "name": "Microphone",
+            "source_uuid": "b900cec9-ad35-5baf-96a1-73ae15dcbc56",
+            "visible": true,
+            "locked": false,
+            "rot": 0.0,
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "align": 5,
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "crop_left": 0,
+            "crop_top": 0,
+            "crop_right": 0,
+            "crop_bottom": 0,
+            "id": 10,
+            "group_item_backup": false,
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -1.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            },
+            "private_settings": {}
           }
         ]
       },
@@ -2344,7 +2506,7 @@
       "id": "scene",
       "versioned_id": "scene",
       "settings": {
-        "id_counter": 7,
+        "id_counter": 8,
         "custom_size": false,
         "items": [
           {
@@ -2621,6 +2783,61 @@
               "duration": 300
             },
             "private_settings": {}
+          },
+          {
+            "name": "Microphone",
+            "source_uuid": "b900cec9-ad35-5baf-96a1-73ae15dcbc56",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "align": 5,
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "crop_left": 0,
+            "crop_top": 0,
+            "crop_right": 0,
+            "crop_bottom": 0,
+            "id": 8,
+            "group_item_backup": false,
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -1.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            },
+            "private_settings": {}
           }
         ]
       },
@@ -2649,7 +2866,7 @@
       "id": "scene",
       "versioned_id": "scene",
       "settings": {
-        "id_counter": 7,
+        "id_counter": 8,
         "custom_size": false,
         "items": [
           {
@@ -2871,6 +3088,61 @@
               "duration": 300
             },
             "private_settings": {}
+          },
+          {
+            "name": "Microphone",
+            "source_uuid": "b900cec9-ad35-5baf-96a1-73ae15dcbc56",
+            "visible": true,
+            "locked": false,
+            "rot": 0.0,
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "align": 5,
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "crop_left": 0,
+            "crop_top": 0,
+            "crop_right": 0,
+            "crop_bottom": 0,
+            "id": 8,
+            "group_item_backup": false,
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -1.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            },
+            "private_settings": {}
           }
         ]
       },
@@ -2923,11 +3195,11 @@
             "id": 1,
             "group_item_backup": false,
             "pos": {
-              "x": 1540.0,
+              "x": 920.0,
               "y": 1261.0
             },
             "pos_rel": {
-              "x": 0.3611111044883728,
+              "x": -0.5,
               "y": 0.7513889074325562
             },
             "scale": {
@@ -2984,7 +3256,7 @@
       "id": "scene",
       "versioned_id": "scene",
       "settings": {
-        "id_counter": 1,
+        "id_counter": 2,
         "custom_size": false,
         "items": [
           {
@@ -3006,6 +3278,61 @@
             "crop_right": 0,
             "crop_bottom": 0,
             "id": 1,
+            "group_item_backup": false,
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -1.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            },
+            "private_settings": {}
+          },
+          {
+            "name": "Microphone",
+            "source_uuid": "b900cec9-ad35-5baf-96a1-73ae15dcbc56",
+            "visible": true,
+            "locked": false,
+            "rot": 0.0,
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "align": 5,
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "crop_left": 0,
+            "crop_top": 0,
+            "crop_right": 0,
+            "crop_bottom": 0,
+            "id": 2,
             "group_item_backup": false,
             "pos": {
               "x": 0.0,
@@ -3069,7 +3396,7 @@
       "id": "scene",
       "versioned_id": "scene",
       "settings": {
-        "id_counter": 3,
+        "id_counter": 4,
         "custom_size": false,
         "items": [
           {
@@ -3181,6 +3508,61 @@
               "duration": 300
             },
             "private_settings": {}
+          },
+          {
+            "name": "Microphone",
+            "source_uuid": "b900cec9-ad35-5baf-96a1-73ae15dcbc56",
+            "visible": true,
+            "locked": false,
+            "rot": 0.0,
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "align": 5,
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "crop_left": 0,
+            "crop_top": 0,
+            "crop_right": 0,
+            "crop_bottom": 0,
+            "id": 4,
+            "group_item_backup": false,
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -1.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            },
+            "private_settings": {}
           }
         ]
       },
@@ -3209,7 +3591,7 @@
       "id": "scene",
       "versioned_id": "scene",
       "settings": {
-        "id_counter": 5,
+        "id_counter": 6,
         "custom_size": false,
         "items": [
           {
@@ -3376,6 +3758,146 @@
               "duration": 300
             },
             "private_settings": {}
+          },
+          {
+            "name": "Microphone",
+            "source_uuid": "b900cec9-ad35-5baf-96a1-73ae15dcbc56",
+            "visible": true,
+            "locked": false,
+            "rot": 0.0,
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "align": 5,
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "crop_left": 0,
+            "crop_top": 0,
+            "crop_right": 0,
+            "crop_bottom": 0,
+            "id": 6,
+            "group_item_backup": false,
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -1.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            },
+            "private_settings": {}
+          }
+        ]
+      },
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1.0,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "hotkeys": {},
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+      "private_settings": {}
+    },
+    {
+      "prev_ver": 537001986,
+      "name": "Privacy",
+      "uuid": "d3d9ccc3-982d-50b1-860a-73bcf931b39f",
+      "id": "scene",
+      "versioned_id": "scene",
+      "settings": {
+        "id_counter": 1,
+        "custom_size": false,
+        "items": [
+          {
+            "name": "Privacy Card",
+            "source_uuid": "cc503758-4195-5c8c-87d6-316d9b61f257",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "align": 5,
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "crop_left": 0,
+            "crop_top": 0,
+            "crop_right": 0,
+            "crop_bottom": 0,
+            "id": 1,
+            "group_item_backup": false,
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -1.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            },
+            "private_settings": {}
           }
         ]
       },
@@ -3401,16 +3923,40 @@
   "groups": [],
   "scene_order": [
     {
-      "name": "SRC - Face Camera"
+      "name": "Shared - Topic"
     },
     {
-      "name": "SRC - Overhead Camera"
+      "name": "Privacy"
     },
     {
-      "name": "Shared Scene 14"
+      "name": "Working - Both Cameras"
+    },
+    {
+      "name": "Working - Overhead Only"
+    },
+    {
+      "name": "Working - Face Only"
+    },
+    {
+      "name": "Working - Cameras Off"
+    },
+    {
+      "name": "Talking - Face Only"
+    },
+    {
+      "name": "Talking - Desk Only"
+    },
+    {
+      "name": "Talking - Desk and Face"
+    },
+    {
+      "name": "Shared Scene 24"
     },
     {
       "name": "Shared - Sidebar"
+    },
+    {
+      "name": "Shared - Camera Border"
     },
     {
       "name": "Placeholder - Face"
@@ -3419,34 +3965,13 @@
       "name": "Placeholder - Overhead"
     },
     {
-      "name": "Working - Both Cameras"
+      "name": "Shared Scene 14"
     },
     {
-      "name": "Shared - Camera Border"
+      "name": "SRC - Face Camera"
     },
     {
-      "name": "Shared - Topic"
-    },
-    {
-      "name": "Working - Face Only"
-    },
-    {
-      "name": "Working - Overhead Only"
-    },
-    {
-      "name": "Working - Cameras Off"
-    },
-    {
-      "name": "Shared Scene 24"
-    },
-    {
-      "name": "Talking - Desk Only"
-    },
-    {
-      "name": "Talking - Face Only"
-    },
-    {
-      "name": "Talking - Desk and Face"
+      "name": "SRC - Overhead Camera"
     }
   ],
   "current_scene": "Working - Both Cameras",
@@ -3484,32 +4009,6 @@
     "sync": 0,
     "flags": 0,
     "volume": 0.22435961663722992,
-    "balance": 0.5,
-    "enabled": true,
-    "muted": true,
-    "push-to-mute": false,
-    "push-to-mute-delay": 0,
-    "push-to-talk": false,
-    "push-to-talk-delay": 0,
-    "hotkeys": {},
-    "deinterlace_mode": 0,
-    "deinterlace_field_order": 0,
-    "monitoring_type": 0,
-    "private_settings": {}
-  },
-  "AuxAudioDevice1": {
-    "prev_ver": 537001986,
-    "name": "Microphone",
-    "uuid": "3d2bcc22-18e0-5e47-9689-f090381c403c",
-    "id": "pulse_input_capture",
-    "versioned_id": "pulse_input_capture",
-    "settings": {
-      "device_id": "SELECT_LOCAL_AUDIO_DEVICE"
-    },
-    "mixers": 255,
-    "sync": 0,
-    "flags": 0,
-    "volume": 1.0,
     "balance": 0.5,
     "enabled": true,
     "muted": true,
