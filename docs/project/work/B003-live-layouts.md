@@ -57,7 +57,9 @@ uses JetBrains Mono with a monospace fallback; Nerd Font icons are optional.
 Keep accents restrained and use the supplied wordmark without recreating its
 lettering or changing its geometry. Reusable logo design remains in
 `brand-identity`; this project owns streaming placement. A plain name treatment
-is acceptable where the full wordmark would be too small.
+is acceptable where the full wordmark would be too small. For Working, Tom has
+chosen a plain website address as the only explicit identifier; a wordmark is
+not required, and refinement of the initial website treatment is deferred.
 
 Shared sources or nested scenes are recommended where they avoid duplicating
 camera and filter configuration. Include a simple Privacy scene at this stage
@@ -81,8 +83,9 @@ separate outcomes in B004 and B006, not prerequisites for a usable initial layou
   Leaving Privacy keeps the microphone muted until an explicit unmute.
 - Shared camera and filter settings avoid unnecessary duplication, and saved
   scene configuration and verification guidance allow the layouts to be restored.
-- Any available approved branding is integrated without making a final logo a
-  prerequisite for usable scenes.
+- Explicit branding suits the selected layout and follows the existing identity.
+  Working may use only a plain website address; a final logo or wordmark is not
+  a prerequisite for usable scenes.
 
 ## Open questions
 
