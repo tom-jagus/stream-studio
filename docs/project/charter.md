@@ -20,8 +20,8 @@ Local backgrounds and overlays provide session context without replacing OBS.
 - Six OBS scenes support preparation, work, conversation, breaks, ending, and
   immediate privacy. Working preserves screen readability; Talking prioritizes
   the face camera.
-- Vial controls operate OBS without OBS focus. Neovim input visualization stops
-  outside focused Neovim and follows an explicit disclosure policy.
+- Vial controls operate OBS without OBS focus. Opt-in system-wide keystroke
+  presentation follows the agreed workspace and disclosure policy.
 - Local presentation works before environmental effects are added, and remains
   usable when external data is unavailable.
 - Shared styling and configuration avoid unnecessary duplication. Setup and
@@ -41,12 +41,12 @@ illustrated room. Starting, Break, and Ending share an anime-style room,
 initially static and later animated with local daylight and weather variation.
 
 A dedicated Vial layer, host-side handling, and OBS WebSocket are the intended
-control path. Input visualization is limited to focused Neovim. Styling follows
-the system's Catppuccin theme. Reusable logo design belongs to `brand-identity`;
+control path. Keystroke presentation is system-wide and explicitly enabled,
+with workspace-based suspension. Styling follows the system's Catppuccin theme. Reusable logo design belongs to `brand-identity`;
 this project integrates approved assets, but a final logo is not a prerequisite.
 
 Keep credentials, exact private location, and confidential information out of
 versioned configuration and browser-visible data. Inspect OBS exports before
-publishing. Reserved screen areas and Neovim focus are not confidentiality
-guarantees. A general-purpose product, public remote-control interface, and
-automatic broadcasting workflow are outside agreed scope.
+publishing. Reserved screen areas and workspace restrictions are not
+confidentiality guarantees. A general-purpose product, public remote-control
+interface, and automatic broadcasting workflow are outside agreed scope.

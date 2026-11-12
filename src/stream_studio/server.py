@@ -1,0 +1,72 @@
+"""Read-only loopback HTTP server for the OBS browser source."""
+
+import json
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from importlib.resources import files
+from urllib.parse import urlsplit
+
+from .state import read_topic
+
+HOST = "127.0.0.1"
+PORT = 8766
+BASE_URL = f"http://{HOST}:{PORT}"
+ASSETS = {
+    "/": ("topic.html", "text/html; charset=utf-8"),
+    "/topic": ("topic.html", "text/html; charset=utf-8"),
+    "/topic.css": ("topic.css", "text/css; charset=utf-8"),
+    "/topic.js": ("topic.js", "text/javascript; charset=utf-8"),
+}
+
+
+class Handler(BaseHTTPRequestHandler):
+    def do_GET(self) -> None:
+        # Do not expose state to arbitrary Host headers or DNS rebinding.
+        if self.headers.get("Host") not in {
+            f"{HOST}:{PORT}", f"localhost:{PORT}"
+        }:
+            self.send_error(403, "Invalid Host")
+            return
+        path = urlsplit(self.path).path
+        if path == "/api/topic":
+            try:
+                body = json.dumps({"topic": read_topic()}).encode("utf-8")
+            except (OSError, ValueError):
+                self.send_error(503, "Topic state is unavailable")
+                return
+            self.respond(body, "application/json; charset=utf-8")
+        elif path in ASSETS:
+            name, content_type = ASSETS[path]
+            self.respond(
+                files("stream_studio").joinpath("web", name).read_bytes(),
+                content_type,
+            )
+        else:
+            self.send_error(404)
+
+    def respond(self, body: bytes, content_type: str) -> None:
+        self.send_response(200)
+        self.send_header("Content-Type", content_type)
+        self.send_header("Content-Length", str(len(body)))
+        self.send_header("Cache-Control", "no-store")
+        self.send_header("X-Content-Type-Options", "nosniff")
+        self.send_header(
+            "Content-Security-Policy",
+            "default-src 'self'; script-src 'self'; style-src 'self'; "
+            "connect-src 'self'; frame-ancestors 'none'",
+        )
+        self.end_headers()
+        self.wfile.write(body)
+
+    def log_request(self, code: int | str = "-", size: int | str = "-") -> None:
+        # Routine polling need not fill the journal.
+        if code != 200:
+            super().log_request(code, size)
+
+
+def serve() -> None:
+    with ThreadingHTTPServer((HOST, PORT), Handler) as server:
+        print(f"Topic overlay: {BASE_URL}/topic", flush=True)
+        try:
+            server.serve_forever()
+        except KeyboardInterrupt:
+            pass

@@ -1,0 +1,43 @@
+:root {
+  color-scheme: dark;
+  --text: #cdd6f4;
+  --label: #bac2de;
+  --crust: #11111b;
+  --gap: 80px;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; background: transparent; overflow: hidden; }
+body { font-family: "JetBrains Mono", "JetBrainsMono Nerd Font", monospace; }
+[hidden] { display: none !important; }
+
+#overlay { padding: 10px 12px 16px; }
+#label, #track {
+  color: var(--text);
+  -webkit-text-stroke: 1.5px var(--crust);
+  paint-order: stroke fill;
+  text-shadow: 0 4px 5px rgba(17, 17, 27, 0.9);
+}
+#label {
+  color: var(--label);
+  font-size: 22px;
+  line-height: 1.5;
+  margin-bottom: 8px;
+  white-space: nowrap;
+}
+#viewport {
+  overflow: hidden;
+  /* Space protects stationary text outlines and offset shadows. */
+  padding: 4px 8px 14px;
+}
+#track {
+  display: flex;
+  width: max-content;
+  align-items: baseline;
+  font-size: 34px;
+  line-height: 1.5;
+  white-space: pre;
+}
+#topic, #copy { flex: none; }
+#copy { display: none; margin-left: var(--gap); }
+#track.scrolling #copy { display: block; }

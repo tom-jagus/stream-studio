@@ -1,6 +1,6 @@
 ---
 id: B004
-status: Draft
+status: In progress
 ---
 
 # Local presentation and static room scenes
@@ -34,12 +34,19 @@ browser-independent version; this brief owns any later presentation expansion.
 Preserve its microphone-only muting policy, unchanged desktop/music audio, and
 microphone mute on exit until an explicit unmute.
 
-Recommended approaches, not selected implementations, include separating room
-backgrounds from informational overlays, using layered SVG or transparent
-artwork with HTML/CSS text, and sharing presentation state. Possible context
-includes a session title, agenda, Now / Next, break message or timer, and ending
-summary. Use original or appropriately licensed assets. Keep controls local and
-OBS credentials outside browser-delivered content.
+The first presentation feature is a Python local service and a transparent topic
+Browser Source, operated through a `stream` command. Store topic state under
+`~/.local/share/stream-studio` and any needed configuration under
+`~/.config/stream-studio`. OBS owns placement. The topic overlay is independent
+of TTS and does not replace browser-independent Privacy. See
+[Slice 6](S006-local-topic-overlay.md) for the accepted topic-overlay delivery
+and its verification limits.
+
+Other approaches remain open, including separating room backgrounds from
+informational overlays and using layered SVG or transparent artwork with
+HTML/CSS text. Possible context includes an agenda, Now / Next, break message
+or timer, and ending summary. Use original or appropriately licensed assets.
+Keep controls local and OBS credentials outside browser-delivered content.
 
 ## Acceptance criteria
 
@@ -59,8 +66,6 @@ OBS credentials outside browser-delivered content.
 
 ## Open questions
 
-- Which language, framework, persistence mechanism, and deployment method fit
-  the local service?
-- Which artwork and informational fields should the first version include?
-- How should session information be edited locally?
+- Which artwork and additional informational fields should later versions include?
+- How should session information beyond the topic be edited locally?
 - What should happen to microphone mute state when leaving Break?
