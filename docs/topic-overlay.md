@@ -105,7 +105,7 @@ Malformed saved state produces an error rather than silently clearing it;
 Tom reports that the overlay works in his aligned OBS layout and accepts the
 implementation. That is user-reported visual and operational evidence, not a
 record of every failure case. The latest synthetic suite, including topic and
-keystroke tests, passed 43 tests. To run it from the checkout with Python 3.12
+keystroke tests, passed 56 tests. To run it from the checkout with Python 3.12
 or newer:
 
 ```bash

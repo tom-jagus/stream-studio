@@ -89,15 +89,15 @@ therefore make the displayed keys differ from the resulting text.
 
 ## Current limitations and verification
 
-Tom reports that the latest overlay and toggle changes appear to work. During
-Herdr workspace switches that cleared the overlay, Hyprland emitted active-window
-and title events, but no workspace events. The overlay no longer clears merely
-for an active-window event. Actual workspace and layer transitions still trigger
-suspension. See [Slice 8](project/work/S008-keystroke-presentation.md) for the
-remaining work.
+Tom reports that manual controls, device selection and permissions, workspace
+gating, mapping and recovery, bounded delivery and privacy work as needed. He
+also reports that a keyboard reconnect worked and the OBS presentation looks
+fine. These are his reported checks, not a record of every test condition.
 
-The earlier synthetic suite passed 43 tests; the tests added or changed since
-then have not been run. Live reconnect, lock and prompt
-suppression timing, and OBS output-size readability still need verification.
-The saved OBS scene snapshot predates this browser source. Do not infer that the
-snapshot restores it.
+The synthetic suite passed 56 tests. Live screen-lock and authentication-prompt
+suppression and their timing remain unverified. Use harmless input if checking
+these later, never a real password. Workspace gating and prompt detection do not
+replace manual off before sensitive input.
+
+The saved OBS scene snapshot predates this browser source and does not restore
+it. See [Slice 8](project/work/S008-keystroke-presentation.md) for the work item.

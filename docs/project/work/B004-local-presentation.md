@@ -40,7 +40,9 @@ Browser Source, operated through a `stream` command. Store topic state under
 `~/.config/stream-studio`. OBS owns placement. The topic overlay is independent
 of TTS and does not replace browser-independent Privacy. See
 [Slice 6](S006-local-topic-overlay.md) for the accepted topic-overlay delivery
-and its verification limits.
+and its verification limits. The agreed read-only YouTube chat overlay is
+specified in [Slice 9](S009-youtube-chat-overlay.md). A desktop-only chat view
+that OBS does not capture is deferred.
 
 Other approaches remain open, including separating room backgrounds from
 informational overlays and using layered SVG or transparent artwork with
