@@ -53,8 +53,11 @@ and visibility. Install JetBrains Mono for the intended font.
 
 Messages are held in memory, not archived. The service keeps at most 50, with
 bounded author and message lengths. The browser displays the newest messages
-that fit. Continuous display is the default; use a positive whole number of
-minutes to expire messages, or `off` to disable expiry:
+that fit. Each chat page randomly assigns author colors from a Catppuccin palette
+and retains them while the author's messages remain in its current message set.
+Different authors may share a color, and the OBS source and desktop preview may
+choose different colors. Continuous display is the default; use a positive whole
+number of minutes to expire messages, or `off` to disable expiry:
 
 ```bash
 stream chat expiry 5

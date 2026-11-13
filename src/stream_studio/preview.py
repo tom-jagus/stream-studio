@@ -72,7 +72,11 @@ def geometry():
         raise ValueError("The external monitor has no reserved right-hand area")
     width = round(monitor["width"] / monitor["scale"])
     height = round(monitor["height"] / monitor["scale"])
-    return monitor["x"] + width - right, monitor["y"] + top, right, height - top - bottom
+    inset = 3
+    if right <= inset:
+        raise ValueError("The reserved area is too narrow for the preview")
+    return (monitor["x"] + width - right + inset, monitor["y"] + top,
+            right - inset, height - top - bottom)
 
 
 def command(action):

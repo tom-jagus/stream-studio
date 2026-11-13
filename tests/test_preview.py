@@ -70,7 +70,7 @@ class PreviewTests(unittest.TestCase):
                    "width": 2560, "height": 1440, "x": 1200, "y": 0,
                    "reserved": [0, 30, 400, 0]}
         with patch("stream_studio.preview.query", return_value=[monitor]):
-            self.assertEqual(preview.geometry(), (2400, 30, 400, 870))
+            self.assertEqual(preview.geometry(), (2403, 30, 397, 870))
 
     def test_no_reserved_space_does_not_launch_browser(self):
         with patch("stream_studio.preview.windows", return_value=[]), \
