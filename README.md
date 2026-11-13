@@ -33,7 +33,9 @@ credentials need separate setup; see the guides below.
 Add an OBS Browser Source pointing to `http://127.0.0.1:8766/topic` and position
 it in your scene. Install JetBrains Mono locally for the intended typography.
 Update the text with `stream topic "A new topic"`, clear it with
-`stream topic ""`, and stop the service with `stream stop`.
+`stream topic ""`, and stop the service with `stream stop`. After a successful
+service command, `stream start` requests cliamp volume at -15 dB and
+`stream stop` requests 0 dB. See the topic guide for limitations.
 
 The [topic overlay guide](docs/topic-overlay.md) covers setup, persistence,
 scrolling, fallback, and verification limits.

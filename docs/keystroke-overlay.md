@@ -34,7 +34,9 @@ preserves an existing service unit. Verify that the unit points to the intended
 Python environment. Follow the [topic guide](topic-overlay.md) for the remaining
 service setup and start steps. For a keys-only installation, use
 `uv tool install --force --editable '.[keys]'` instead, but this omits the chat
-extra from the replacement installation.
+extra from the replacement installation. If the user unit does not already
+exist, run `stream install-service` after installing. It creates the unit without
+starting or enabling it and refuses to overwrite an existing unit.
 
 The optional rule `system/70-stream-studio-keyboards.rules` grants the active
 local session access to keyboard interfaces with the selected USB vendor and

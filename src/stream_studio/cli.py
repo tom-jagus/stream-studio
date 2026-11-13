@@ -18,6 +18,28 @@ def systemctl(*arguments: str) -> int:
     return subprocess.run(["systemctl", "--user", *arguments, SERVICE]).returncode
 
 
+def set_cliamp_volume(db: int) -> None:
+    """Set and verify cliamp's own volume without exposing playback metadata."""
+    try:
+        result = subprocess.run(["cliamp", "volume", str(db)], capture_output=True,
+                                text=True, timeout=5, check=False)
+        if result.returncode != 0:
+            raise ValueError("cliamp did not accept the volume command")
+        result = subprocess.run(["cliamp", "status", "--json"], capture_output=True,
+                                text=True, timeout=5, check=False)
+        if result.returncode != 0:
+            raise ValueError("could not verify cliamp volume")
+        payload = json.loads(result.stdout)
+        volume = payload["volume"]
+        if payload.get("ok") is not True or isinstance(volume, bool) or volume != db:
+            raise ValueError("cliamp did not report the requested volume")
+    except (OSError, ValueError, KeyError, TypeError, AttributeError,
+            subprocess.SubprocessError) as error:
+        print(f"Warning: cliamp volume was not confirmed: {error}", file=sys.stderr)
+        return
+    print(f"cliamp volume: {db:+d} dB")
+
+
 def install_service() -> int:
     target = Path.home() / ".config/systemd/user" / SERVICE
     target.parent.mkdir(parents=True, exist_ok=True)
@@ -40,27 +62,65 @@ def install_service() -> int:
     return result.returncode
 
 
+def format_keys(result: dict) -> str:
+    return f"Keys: {result['state']} ({result['reason']})"
+
+
+def format_chat(result: dict) -> str:
+    expiry = result.get("expiry")
+    return (f"Chat: {result['state']} ({result['reason']}); "
+            f"expiry: {expiry if expiry is not None else 'off'}; "
+            f"skipped: {result['skipped']}")
+
+
 def status() -> int:
-    result = systemctl("is-active")
-    print(f"Saved topic: {read_topic() or '(empty)'}")
+    from .chat_control import request as chat_request
+    from .keys_control import request as keys_request
+    from .preview import command as preview_command
+
+    failed = False
+    try:
+        result = systemctl("is-active")
+    except (OSError, subprocess.SubprocessError) as error:
+        print(f"Service: unavailable ({error})")
+        result = 1
+    if result != 0:
+        print("Service is not active or its status is unavailable.")
+        failed = True
+    try:
+        print(f"Saved topic: {read_topic() or '(empty)'}")
+    except (OSError, ValueError) as error:
+        print(f"Saved topic: unavailable ({error})")
+        failed = True
     print(f"State: {state_path()}")
     print(f"Overlay: {BASE_URL}/topic")
-    if result != 0:
-        print("Service is not active.")
-        return 1
-    try:
-        # Ignore proxy environment variables for this loopback-only request.
-        opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
-        with opener.open(f"{BASE_URL}/api/topic", timeout=2) as response:
-            payload = json.load(response)
-        if not isinstance(payload, dict) or not isinstance(payload.get("topic"), str):
-            raise ValueError("Unexpected topic response.")
-    except (OSError, ValueError, urllib.error.URLError) as error:
-        print(f"Service is active but the topic endpoint is unavailable: {error}",
-              file=sys.stderr)
-        return 1
-    print("Topic endpoint is responding.")
-    return 0
+    if result == 0:
+        try:
+            # Ignore proxy environment variables for this loopback-only request.
+            opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
+            with opener.open(f"{BASE_URL}/api/topic", timeout=2) as response:
+                payload = json.load(response)
+            if not isinstance(payload, dict) or not isinstance(payload.get("topic"), str):
+                raise ValueError("Unexpected topic response.")
+            print("Topic endpoint is responding.")
+        except (OSError, ValueError, urllib.error.URLError) as error:
+            print(f"Topic endpoint: unavailable ({error})")
+            failed = True
+    else:
+        print("Topic endpoint: not checked (service inactive or unavailable).")
+
+    for label, get_status, render in (
+        ("Keys", lambda: keys_request("status"), format_keys),
+        ("Chat", lambda: chat_request("status"), format_chat),
+        ("Preview", lambda: preview_command("status"), lambda value: f"Preview: {value}"),
+    ):
+        try:
+            print(render(get_status()))
+        except (OSError, ValueError, KeyError, TypeError, AttributeError,
+                subprocess.SubprocessError) as error:
+            print(f"{label}: unavailable ({error})")
+            failed = True
+    return 1 if failed else 0
 
 
 def main() -> int:
@@ -68,7 +128,7 @@ def main() -> int:
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("start", help="Start the local user service")
     commands.add_parser("stop", help="Stop the service without clearing the topic")
-    commands.add_parser("status", help="Show service health and saved topic")
+    commands.add_parser("status", help="Show service, topic, keys, chat, and preview status")
     commands.add_parser("serve", help="Run the service in the foreground")
     commands.add_parser("install-service", help="Create the user service, without starting it")
     keys = commands.add_parser("keys", help="Control transient keystroke presentation")
@@ -86,7 +146,10 @@ def main() -> int:
     args = parser.parse_args()
     try:
         if args.command in {"start", "stop"}:
-            return systemctl(args.command)
+            result = systemctl(args.command)
+            if result == 0:
+                set_cliamp_volume(-15 if args.command == "start" else 0)
+            return result
         if args.command == "status":
             return status()
         if args.command == "install-service":
@@ -95,7 +158,7 @@ def main() -> int:
             from .keys_control import request
 
             result = request(args.action)
-            print(f"Keys: {result['state']} ({result['reason']})")
+            print(format_keys(result))
             return 0
         if args.command == "preview":
             from .preview import command
@@ -106,10 +169,7 @@ def main() -> int:
             from .chat_control import request
 
             result = request(args.action, getattr(args, "argument", None))
-            expiry = result.get("expiry")
-            print(f"Chat: {result['state']} ({result['reason']}); "
-                  f"expiry: {expiry if expiry is not None else 'off'}; "
-                  f"skipped: {result['skipped']}")
+            print(format_chat(result))
             return 0
         if args.command == "topic":
             saved = write_topic(args.text)
