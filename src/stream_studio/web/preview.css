@@ -1,0 +1,15 @@
+html, body { height: 100%; background: #181825; color: #cdd6f4; }
+body { font: 16px/1.4 "JetBrains Mono", monospace; overflow: hidden; }
+main { display: flex; flex-direction: column; height: 100%; gap: 14px; padding: 16px; }
+section { flex: none; min-width: 0; }
+h1 { margin: 0 0 6px; color: #cba6f7; font-size: 16px; }
+h1 span { color: #a6adc8; font-size: 12px; font-weight: normal; }
+p { margin: 0; overflow-wrap: anywhere; max-height: 25vh; overflow: auto; }
+#keys { padding: 4px 0 10px; font-size: 18px; gap: 4px; }
+.key { min-width: 30px; min-height: 32px; padding: 3px 5px; }
+.join { font-size: 12px; }
+.count { font-size: 11px; }
+.chat-section { flex: 1; display: flex; flex-direction: column; min-height: 0; }
+#chat { flex: 1; overflow-y: auto; overflow-wrap: anywhere; }
+.message { margin-bottom: 8px; }
+.author { color: #89b4fa; font-weight: bold; }

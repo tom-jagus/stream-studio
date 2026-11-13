@@ -41,8 +41,9 @@ Browser Source, operated through a `stream` command. Store topic state under
 of TTS and does not replace browser-independent Privacy. See
 [Slice 6](S006-local-topic-overlay.md) for the accepted topic-overlay delivery
 and its verification limits. The agreed read-only YouTube chat overlay is
-specified in [Slice 9](S009-youtube-chat-overlay.md). A desktop-only chat view
-that OBS does not capture is deferred.
+specified in [Slice 9](S009-youtube-chat-overlay.md). A separate desktop preview
+shows topic, keys, and chat. It is part of full-monitor capture; an opaque OBS
+sidebar can visually cover it but does not exclude it.
 
 Other approaches remain open, including separating room backgrounds from
 informational overlays and using layered SVG or transparent artwork with

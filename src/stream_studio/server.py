@@ -18,6 +18,12 @@ ASSETS = {
     "/keys": ("keys.html", "text/html; charset=utf-8"),
     "/keys.css": ("keys.css", "text/css; charset=utf-8"),
     "/keys.js": ("keys.js", "text/javascript; charset=utf-8"),
+    "/chat": ("chat.html", "text/html; charset=utf-8"),
+    "/chat.css": ("chat.css", "text/css; charset=utf-8"),
+    "/chat.js": ("chat.js", "text/javascript; charset=utf-8"),
+    "/preview": ("preview.html", "text/html; charset=utf-8"),
+    "/preview.css": ("preview.css", "text/css; charset=utf-8"),
+    "/preview.js": ("preview.js", "text/javascript; charset=utf-8"),
 }
 
 
@@ -43,6 +49,13 @@ class Handler(BaseHTTPRequestHandler):
                 self.send_error(503, "Key presentation unavailable")
                 return
             self.respond(json.dumps(keys.snapshot()).encode("utf-8"),
+                         "application/json; charset=utf-8")
+        elif path == "/api/chat":
+            chat = getattr(self.server, "chat", None)
+            if chat is None:
+                self.send_error(503, "Chat unavailable")
+                return
+            self.respond(json.dumps(chat.snapshot()).encode("utf-8"),
                          "application/json; charset=utf-8")
         elif path in ASSETS:
             name, content_type = ASSETS[path]
@@ -76,11 +89,16 @@ class Handler(BaseHTTPRequestHandler):
 def serve() -> None:
     from .keys import Keys
     from .keys_control import Control
+    from .chat_control import Control as ChatControl
+    from .chat_service import ChatService
 
     keys = Keys()
+    chat = ChatService()
     with ThreadingHTTPServer((HOST, PORT), Handler) as server:
         server.keys = keys
+        server.chat = chat.chat
         control = Control(keys)
+        chat_control = ChatControl(chat)
         from .keys_capture import Capture
 
         capture = Capture(keys)
@@ -93,4 +111,6 @@ def serve() -> None:
         finally:
             keys.command("off")
             capture.close()
+            chat.close()
+            chat_control.close()
             control.close()

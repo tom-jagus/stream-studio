@@ -1,0 +1,10 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; background: transparent; overflow: hidden; }
+#chat {
+  display: flex; flex-direction: column; justify-content: flex-end;
+  gap: 10px; height: 100vh; overflow: hidden; padding: 12px;
+  color: #cdd6f4; font: 22px/1.35 "JetBrains Mono", monospace;
+  text-shadow: -1px -1px 2px #11111b, 1px 2px 3px #11111b;
+}
+.message { flex: none; overflow-wrap: anywhere; }
+.author { color: #cba6f7; font-weight: bold; }

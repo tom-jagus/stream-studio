@@ -75,10 +75,10 @@ ignores active-window events while retaining workspace and layer invalidation.
 The display supports up to eleven entries, omits standalone modifiers used in
 combinations, and groups identical consecutive presses on the third press.
 
-The earlier synthetic suite passed 43 tests. Tests added or changed since then
-have not been run. Complete live checks against the acceptance criteria, including
-reconnect, lock and prompt timing, and output-size readability, remain
-outstanding. The slice is not yet accepted as complete.
+The current synthetic suite passed 75 tests across the project. Tom reports
+that both keyboard selection and controls work, along with workspace gating,
+reconnect, and OBS presentation. Live lock and authentication-prompt suppression
+and timing remain unverified. The slice is not yet accepted as complete.
 
 ## Tasks
 

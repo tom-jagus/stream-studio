@@ -7,6 +7,7 @@ dependencies = []
 
 [project.optional-dependencies]
 keys = ["evdev>=1.9,<2", "xkbcommon>=1.5,<2"]
+chat = ["grpcio>=1.60,<2", "protobuf>=5,<7"]
 
 [project.scripts]
 stream = "stream_studio.cli:main"

@@ -1,6 +1,6 @@
 ---
 id: S009
-status: To do
+status: In progress
 parent: B004
 depends_on:
   - S006
@@ -57,23 +57,37 @@ Keep per-stream setup simple and allow an optional message expiry.
   OBS presentation; missing access or evidence is reported, not treated as a pass.
   Existing topic and keystroke behavior remains intact.
 
+## Review
+
+The read-only connection, local page, controls, bounded state, and expiry are
+implemented. Tom reports that a live YouTube connection and OBS presentation
+work. The synthetic suite passed 75 tests, including chat state, expiry, URL,
+settings, control, and protobuf round-trip checks. The round-trip alone does not
+prove wire interoperability; the live connection provides separate evidence.
+Setup and operating guidance is in [YouTube chat overlay](../../youtube-chat-overlay.md).
+
+The slice is not yet accepted as complete. Synthetic coverage does not establish
+API failure handling, retry and reconnect, browser rendering, or all stopping
+paths. The CLI also limits expiry input to nine digits, while the criterion
+specifies positive whole numbers without that limit. Further review and targeted
+checks are needed before acceptance.
+
 ## Tasks
 
-- [ ] Confirm the official API's accessible-broadcast, credential, quota, and
-      reconnect behavior for the selected integration; report any blocker.
-- [ ] Add read-only chat acquisition, bounded state, expiry, and CLI controls.
-- [ ] Add the local OBS page and safe rendering with the agreed styling.
-- [ ] Add synthetic tests and, when authorized, check harmless messages with a
-      real broadcast and OBS.
-- [ ] Write setup, operating, privacy, and troubleshooting guidance after the
-      implementation result is accepted.
+- [ ] Confirm accessible-broadcast, credential, quota, and reconnect behavior
+      against the remaining criteria.
+- [x] Add read-only chat acquisition, bounded state, expiry, and CLI controls.
+- [x] Add the local OBS page and safe text rendering.
+- [ ] Complete targeted synthetic coverage of acquisition and failure paths.
+- [x] Check a live connection and OBS presentation with Tom's broadcast.
+- [x] Write setup, operating, privacy, and troubleshooting guidance.
 
 ## Boundaries
 
 Automatic broadcast discovery, sending messages, moderation controls, chat
-archiving, and third-party hosted overlay services are excluded. A future
-on-desktop view that OBS does not capture is a separate outcome and is not
-required here. Do not assume window transparency prevents screen capture.
+archiving, and third-party hosted overlay services are excluded. The desktop
+preview is separate from this slice and is not excluded from monitor capture.
+Do not assume window transparency prevents screen capture.
 Service startup does not need to select or connect to a broadcast automatically.
 Actual credentials, network setup, service restarts, live broadcast checks,
 source edits, tests, and Git actions require their applicable authorization.
