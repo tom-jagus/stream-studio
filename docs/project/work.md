@@ -10,7 +10,7 @@ performed.
 | [B002](work/B002-repeatable-audio.md) | Restore audio settings and validate audio/video together. | Draft | Hardware, processing, and sequencing need inspection or agreement. |
 | [B003](work/B003-live-layouts.md) | Provide readable Working and distinct Talking layouts. | In progress | Privacy and restoration slices remain outstanding. |
 | [S001](work/S001-output-capture-discovery.md) | Recommend a practical output and full-monitor capture baseline. | To do | Read-only inspection permitted; changes and test broadcasts need approval. |
-| [S004](work/S004-simple-privacy.md) | Conceal captures and mute only the microphone without browser dependencies. | In progress | Microphone-return policy conflicts with criteria; immediate entry and output tests remain outstanding. |
+| [S004](work/S004-simple-privacy.md) | Conceal captures and exclude the microphone without browser dependencies. | In progress | Immediate entry and output tests remain outstanding. |
 | [S005](work/S005-layout-restoration.md) | Restore and verify accepted layouts safely. | To do | S004; safe restoration-test approval. |
 | [Brief 4](work/B004-local-presentation.md) | Supply local presentation and complete the six-scene collection. | In progress | Room artwork and later presentation details remain unsettled. |
 | [Slice 9](work/S009-youtube-chat-overlay.md) | Show recent YouTube chat in a local OBS overlay. | In progress | Retry and failure-path coverage and expiry input limit need review. |

@@ -66,11 +66,11 @@ The initial Talking and desk-camera scenes intentionally omit all branding.
 
 Shared sources or nested scenes are recommended where they avoid duplicating
 camera and filter configuration. Include a simple Privacy scene at this stage
-that conceals captures and mutes only the microphone without a browser
-background or stopping the broadcast. Leave desktop audio and music unchanged;
-separate music routing is outside the initial scope. The microphone remains
-muted after leaving Privacy until explicitly unmuted. Further presentation
-belongs to B004. Local informational overlays and input visualization are
+that conceals captures and excludes the microphone without a browser background
+or stopping the broadcast. Leave desktop audio and music unchanged; separate
+music routing is outside the initial scope. The microphone may become audible
+again on leaving Privacy if its shared source was not separately muted. Further
+presentation belongs to B004. Local informational overlays and input visualization are
 separate outcomes in B004 and B006, not prerequisites for a usable initial layout.
 
 ## Acceptance criteria
@@ -81,9 +81,10 @@ separate outcomes in B004 and B006, not prerequisites for a usable initial layou
 - Neither layout contains the illustrated room background.
 - Styling follows Catppuccin Mocha and the existing brand guidance, with readable
   text and sufficient contrast over the intended screen content.
-- A simple browser-independent Privacy scene conceals captures and mutes the
+- A simple browser-independent Privacy scene conceals captures and excludes the
   microphone without stopping the broadcast or changing desktop/music audio.
-  Leaving Privacy keeps the microphone muted until an explicit unmute.
+  The microphone may become audible again after leaving Privacy if it was not
+  separately muted.
 - Shared camera and filter settings avoid unnecessary duplication, and saved
   scene configuration and verification guidance allow the layouts to be restored.
 - Explicit branding suits the selected layout and follows the existing identity.

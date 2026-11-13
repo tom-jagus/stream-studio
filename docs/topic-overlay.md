@@ -85,9 +85,9 @@ error or blank source. Start the service and refresh the source. Keep the
 previous OBS text source hidden as a manual fallback. Privacy must remain
 browser-independent.
 
-The [saved OBS snapshot](../obs/README.md) predates this browser overlay. It
-still restores the native text source, not the newly aligned local Browser
-Source. No fresh scene export or restoration test is included here.
+The [OBS snapshots](../obs/README.md) include an earlier collection without
+browser overlays and a newer sanitized collection with the topic Browser Source.
+The newer restoration has not been tested in OBS.
 
 ## Troubleshooting and verification
 

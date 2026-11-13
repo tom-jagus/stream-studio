@@ -1,0 +1,4768 @@
+{
+  "version": 2,
+  "resolution": {
+    "x": 2560,
+    "y": 1440
+  },
+  "scaling_enabled": false,
+  "scaling_level": 0,
+  "scaling_off_x": 0.0,
+  "scaling_off_y": 0.0,
+  "preview_locked": false,
+  "name": "Stream Studio Restored",
+  "canvases": [],
+  "sources": [
+    {
+      "id": "v4l2_input",
+      "versioned_id": "v4l2_input",
+      "uuid": "c2c148c5-1637-4c48-9de0-3019f3ecbad1",
+      "prev_ver": 537001986,
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1.0,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "name": "Camera 1",
+      "hotkeys": {},
+      "private_settings": {},
+      "settings": {
+        "White Balance, Automatic": false,
+        "White Balance Temperature": 3800,
+        "Zoom, Absolute": 100,
+        "input": 0,
+        "pixelformat": 1196444237,
+        "resolution": 8246337209400,
+        "framerate": 30,
+        "color_range": 2,
+        "auto_reset": true,
+        "timeout_frames": 120,
+        "device_id": "SELECT_OVERHEAD_CAMERA"
+      }
+    },
+    {
+      "id": "v4l2_input",
+      "versioned_id": "v4l2_input",
+      "uuid": "2c78a3c4-a15b-437e-b4ef-89fe8b5bbce6",
+      "prev_ver": 537001986,
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1.0,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "name": "Face Camera",
+      "hotkeys": {},
+      "private_settings": {},
+      "settings": {
+        "Brightness": 0,
+        "White Balance, Automatic": false,
+        "White Balance Temperature": 4800,
+        "input": 0,
+        "pixelformat": 1196444237,
+        "resolution": 8246337209400,
+        "framerate": 30,
+        "color_range": 2,
+        "auto_reset": true,
+        "timeout_frames": 118,
+        "device_id": "SELECT_FACE_CAMERA"
+      }
+    },
+    {
+      "id": "pipewire-screen-capture-source",
+      "versioned_id": "pipewire-screen-capture-source",
+      "uuid": "a0f6e461-9280-41af-996e-5396cb389ef8",
+      "prev_ver": 537001986,
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1.0,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "name": "Screen Capture",
+      "hotkeys": {},
+      "private_settings": {},
+      "settings": {}
+    },
+    {
+      "id": "color_source",
+      "versioned_id": "color_source_v3",
+      "uuid": "98dcfb8b-d1f5-4ccb-b450-c69461034c29",
+      "prev_ver": 537001986,
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1.0,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "name": "Colour 1",
+      "hotkeys": {},
+      "private_settings": {},
+      "settings": {
+        "color": 4280621080,
+        "width": 640,
+        "height": 1440
+      },
+      "filters": [
+        {
+          "id": "color_filter",
+          "versioned_id": "color_filter_v2",
+          "uuid": "e3281cf7-5064-4d25-84ee-6c5e9d71793b",
+          "prev_ver": 537001986,
+          "mixers": 0,
+          "sync": 0,
+          "flags": 0,
+          "volume": 1.0,
+          "balance": 0.5,
+          "enabled": true,
+          "muted": false,
+          "push-to-mute": false,
+          "push-to-mute-delay": 0,
+          "push-to-talk": false,
+          "push-to-talk-delay": 0,
+          "deinterlace_mode": 0,
+          "deinterlace_field_order": 0,
+          "monitoring_type": 0,
+          "name": "Colour Filter",
+          "hotkeys": {},
+          "private_settings": {},
+          "settings": {
+            "gamma": 0.0,
+            "opacity": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "color_source",
+      "versioned_id": "color_source_v3",
+      "uuid": "bdde74a8-670f-4e78-8da9-9e01a10ce847",
+      "prev_ver": 537001986,
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1.0,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "name": "Colour 2",
+      "hotkeys": {},
+      "private_settings": {},
+      "settings": {
+        "color": 4281212446,
+        "width": 2560,
+        "height": 1440
+      }
+    },
+    {
+      "id": "text_ft2_source",
+      "versioned_id": "text_ft2_source_v2",
+      "uuid": "5f6bb412-b9f0-46a6-af9f-271183ae6ad6",
+      "prev_ver": 537001986,
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1.0,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "name": "Text 1",
+      "hotkeys": {},
+      "private_settings": {},
+      "settings": {
+        "word_wrap": false,
+        "drop_shadow": false,
+        "log_lines": 6,
+        "color1": 4282659377,
+        "color2": 4282659377,
+        "font": {
+          "face": "JetBrainsMono Nerd Font",
+          "style": "Regular",
+          "size": 200,
+          "flags": 0
+        },
+        "text": "TEXT TO REPLACE"
+      }
+    },
+    {
+      "id": "text_ft2_source",
+      "versioned_id": "text_ft2_source_v2",
+      "uuid": "45e20d7a-811f-4675-b1b0-cc445c8e3216",
+      "prev_ver": 537001986,
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1.0,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "name": "Text 2",
+      "hotkeys": {},
+      "private_settings": {},
+      "settings": {
+        "word_wrap": false,
+        "drop_shadow": false,
+        "log_lines": 6,
+        "color1": 4282659377,
+        "color2": 4282659377,
+        "font": {
+          "face": "JetBrainsMono Nerd Font",
+          "style": "Regular",
+          "size": 200,
+          "flags": 0
+        },
+        "text": "TEXT TO REPLACE"
+      }
+    },
+    {
+      "id": "color_source",
+      "versioned_id": "color_source_v3",
+      "uuid": "04fbead1-7407-4ebf-b816-e5c942d0b1bb",
+      "prev_ver": 537001986,
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1.0,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "name": "Colour 3",
+      "hotkeys": {},
+      "private_settings": {},
+      "settings": {
+        "color": 4282659377,
+        "width": 2560,
+        "height": 25
+      }
+    },
+    {
+      "id": "color_source",
+      "versioned_id": "color_source_v3",
+      "uuid": "6668c6c9-b4da-4f86-99ae-94b74565fcb8",
+      "prev_ver": 537001986,
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1.0,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "name": "Colour 4",
+      "hotkeys": {},
+      "private_settings": {},
+      "settings": {
+        "color": 4282659377,
+        "width": 25,
+        "height": 1390
+      }
+    },
+    {
+      "id": "text_ft2_source",
+      "versioned_id": "text_ft2_source_v2",
+      "uuid": "1c41d87a-a995-48f2-9d22-02bf89717514",
+      "prev_ver": 537001986,
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1.0,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "name": "Text 3",
+      "hotkeys": {},
+      "private_settings": {},
+      "settings": {
+        "color1": 4294235853,
+        "color2": 4294235853,
+        "font": {
+          "face": "JetBrainsMono Nerd Font",
+          "style": "Regular",
+          "size": 100,
+          "flags": 0
+        },
+        "text": "TEXT TO REPLACE"
+      }
+    },
+    {
+      "id": "image_source",
+      "versioned_id": "image_source",
+      "uuid": "65299229-f101-44d4-98c2-00df69c8bf80",
+      "prev_ver": 537001986,
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1.0,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "name": "Privacy Card",
+      "hotkeys": {},
+      "private_settings": {},
+      "settings": {
+        "file": "SELECT_PRIVACY_IMAGE"
+      }
+    },
+    {
+      "id": "pulse_input_capture",
+      "versioned_id": "pulse_input_capture",
+      "uuid": "123c7d4e-4a63-411a-baf7-973089593160",
+      "prev_ver": 537001986,
+      "mixers": 255,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1.0,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": true,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "name": "Microphone",
+      "hotkeys": {},
+      "private_settings": {},
+      "settings": {
+        "device_id": "SELECT_LOCAL_AUDIO_DEVICE"
+      }
+    },
+    {
+      "id": "browser_source",
+      "versioned_id": "browser_source",
+      "uuid": "f77bef02-134b-4bae-ab25-6416dcd29d93",
+      "prev_ver": 537001986,
+      "mixers": 255,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1.0,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "name": "Stream Topic",
+      "hotkeys": {},
+      "private_settings": {},
+      "settings": {
+        "is_local_file": false,
+        "width": 610,
+        "height": 120,
+        "url": "http://127.0.0.1:8766/topic",
+        "css": ""
+      }
+    },
+    {
+      "id": "browser_source",
+      "versioned_id": "browser_source",
+      "uuid": "ec4536e3-edad-4990-949c-b23c120660a3",
+      "prev_ver": 537001986,
+      "mixers": 255,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1.0,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "name": "Stream Keys",
+      "hotkeys": {},
+      "private_settings": {},
+      "settings": {
+        "width": 610,
+        "height": 80,
+        "restart_when_active": true,
+        "url": "http://127.0.0.1:8766/keys",
+        "is_local_file": false,
+        "css": ""
+      }
+    },
+    {
+      "id": "browser_source",
+      "versioned_id": "browser_source",
+      "uuid": "29c44986-07b1-449c-8391-101b3acf6fe9",
+      "prev_ver": 537001986,
+      "mixers": 255,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1.0,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "name": "Stream Chat",
+      "hotkeys": {},
+      "private_settings": {},
+      "settings": {
+        "width": 610,
+        "height": 470,
+        "restart_when_active": true,
+        "url": "http://127.0.0.1:8766/chat",
+        "is_local_file": false,
+        "css": ""
+      }
+    },
+    {
+      "id": "color_source",
+      "versioned_id": "color_source_v3",
+      "uuid": "7a555177-85bb-4e15-b54a-e4624e30e732",
+      "prev_ver": 537001986,
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1.0,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "name": "Colour 5",
+      "hotkeys": {},
+      "private_settings": {},
+      "settings": {
+        "width": 610,
+        "height": 470,
+        "color": 4280621080
+      },
+      "filters": [
+        {
+          "id": "color_filter",
+          "versioned_id": "color_filter_v2",
+          "uuid": "fe37a5a8-8591-451f-9c66-781c9b917c4c",
+          "prev_ver": 537001986,
+          "mixers": 0,
+          "sync": 0,
+          "flags": 0,
+          "volume": 1.0,
+          "balance": 0.5,
+          "enabled": true,
+          "muted": false,
+          "push-to-mute": false,
+          "push-to-mute-delay": 0,
+          "push-to-talk": false,
+          "push-to-talk-delay": 0,
+          "deinterlace_mode": 0,
+          "deinterlace_field_order": 0,
+          "monitoring_type": 0,
+          "name": "Colour Filter",
+          "hotkeys": {},
+          "private_settings": {},
+          "settings": {
+            "opacity": 0.95
+          }
+        }
+      ]
+    },
+    {
+      "id": "scene",
+      "versioned_id": "scene",
+      "uuid": "508b3c71-75aa-413c-b758-4e55f19998ef",
+      "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+      "prev_ver": 537001986,
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1.0,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "name": "Helper Scene 1",
+      "hotkeys": {},
+      "private_settings": {},
+      "settings": {
+        "id_counter": 4,
+        "custom_size": false,
+        "items": [
+          {
+            "id": 4,
+            "source_uuid": "2c78a3c4-a15b-437e-b4ef-89fe8b5bbce6",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 2560.0,
+              "y": 0.0
+            },
+            "scale": {
+              "x": -1.3333333730697632,
+              "y": 1.3333333730697632
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": 1.7777777910232544,
+              "y": -1.0
+            },
+            "scale_rel": {
+              "x": -2.0,
+              "y": 2.0
+            },
+            "scale_ref": {
+              "x": 3840.0,
+              "y": 2160.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Face Camera",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "scene",
+      "versioned_id": "scene",
+      "uuid": "d0d3902e-603b-48c0-9019-32bf003939ed",
+      "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+      "prev_ver": 537001986,
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1.0,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "name": "Helper Scene 2",
+      "hotkeys": {},
+      "private_settings": {},
+      "settings": {
+        "id_counter": 3,
+        "custom_size": false,
+        "items": [
+          {
+            "id": 2,
+            "source_uuid": "c2c148c5-1637-4c48-9de0-3019f3ecbad1",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "scale": {
+              "x": -1.0,
+              "y": -1.0
+            },
+            "bounds": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_type": 2,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -1.0
+            },
+            "scale_rel": {
+              "x": -1.5,
+              "y": -1.5
+            },
+            "scale_ref": {
+              "x": 3840.0,
+              "y": 2160.0
+            },
+            "bounds_rel": {
+              "x": 3.555555582046509,
+              "y": 2.0
+            },
+            "group_item_backup": false,
+            "name": "Camera 1",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "scene",
+      "versioned_id": "scene",
+      "uuid": "d9a38b38-958a-4b21-a130-d13248d107c9",
+      "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+      "prev_ver": 537001986,
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1.0,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "name": "Helper Scene 3",
+      "hotkeys": {},
+      "private_settings": {},
+      "settings": {
+        "id_counter": 3,
+        "custom_size": false,
+        "items": [
+          {
+            "id": 3,
+            "source_uuid": "a0f6e461-9280-41af-996e-5396cb389ef8",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_type": 2,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -1.0
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 3.555555582046509,
+              "y": 2.0
+            },
+            "group_item_backup": false,
+            "name": "Screen Capture",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "scene",
+      "versioned_id": "scene",
+      "uuid": "f62cede6-7701-42df-9113-851a600e11d5",
+      "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+      "prev_ver": 537001986,
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1.0,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "name": "Helper Scene 4",
+      "hotkeys": {},
+      "private_settings": {},
+      "settings": {
+        "id_counter": 12,
+        "custom_size": false,
+        "items": [
+          {
+            "id": 1,
+            "source_uuid": "98dcfb8b-d1f5-4ccb-b450-c69461034c29",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 1920.0,
+              "y": 0.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": 0.8888888955116272,
+              "y": -1.0
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Colour 1",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 5,
+            "source_uuid": "2629a0f4-5042-4ce1-98a6-4ed94af0b63c",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 1934.0,
+              "y": 15.0
+            },
+            "scale": {
+              "x": 0.23867186903953552,
+              "y": 0.23888888955116272
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": 0.9083333611488342,
+              "y": -0.9791666865348816
+            },
+            "scale_rel": {
+              "x": 0.23867186903953552,
+              "y": 0.23888888955116272
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Helper Scene 5",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 6,
+            "source_uuid": "91af2b28-be0f-4eb3-be38-89f84a4f1770",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 1934.0,
+              "y": 377.0
+            },
+            "scale": {
+              "x": 0.23867186903953552,
+              "y": 0.23888888955116272
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": 0.9083333611488342,
+              "y": -0.4763888716697693
+            },
+            "scale_rel": {
+              "x": 0.23867186903953552,
+              "y": 0.23888888955116272
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Helper Scene 6",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 8,
+            "source_uuid": "b34eec4e-3465-4017-859a-fa91f5118a64",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 1936.0,
+              "y": 1089.0
+            },
+            "scale": {
+              "x": 0.24375000596046448,
+              "y": 0.24375000596046448
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": 0.9111111164093018,
+              "y": 0.5125000476837158
+            },
+            "scale_rel": {
+              "x": 0.24375000596046448,
+              "y": 0.24375000596046448
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Helper Scene 8",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 10,
+            "source_uuid": "f77bef02-134b-4bae-ab25-6416dcd29d93",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 1934.0,
+              "y": 801.0
+            },
+            "scale": {
+              "x": 1.0016393661499023,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": 0.9083333611488342,
+              "y": 0.11249995231628418
+            },
+            "scale_rel": {
+              "x": 1.0016393661499023,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Stream Topic",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 11,
+            "source_uuid": "ec4536e3-edad-4990-949c-b23c120660a3",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 1935.0,
+              "y": 730.5
+            },
+            "scale": {
+              "x": 1.0166666507720947,
+              "y": 1.0125000476837158
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": 0.9097222089767456,
+              "y": 0.014583349227905273
+            },
+            "scale_rel": {
+              "x": 1.0166666507720947,
+              "y": 1.0125000476837158
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Stream Keys",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 12,
+            "source_uuid": "29c44986-07b1-449c-8391-101b3acf6fe9",
+            "visible": true,
+            "locked": false,
+            "rot": 0.0,
+            "pos": {
+              "x": 1935.0,
+              "y": 924.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": 0.9097222089767456,
+              "y": 0.28333330154418945
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Stream Chat",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "scene",
+      "versioned_id": "scene",
+      "uuid": "2629a0f4-5042-4ce1-98a6-4ed94af0b63c",
+      "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+      "prev_ver": 537001986,
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1.0,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "name": "Helper Scene 5",
+      "hotkeys": {},
+      "private_settings": {},
+      "settings": {
+        "id_counter": 6,
+        "custom_size": false,
+        "items": [
+          {
+            "id": 4,
+            "source_uuid": "bdde74a8-670f-4e78-8da9-9e01a10ce847",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -1.0
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Colour 2",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 5,
+            "source_uuid": "5f6bb412-b9f0-46a6-af9f-271183ae6ad6",
+            "visible": false,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 380.0,
+              "y": 618.5
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -1.25,
+              "y": -0.14097219705581665
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Text 1",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 6,
+            "source_uuid": "45e20d7a-811f-4675-b1b0-cc445c8e3216",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 380.0,
+              "y": 618.5
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -1.25,
+              "y": -0.14097219705581665
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Text 2",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "scene",
+      "versioned_id": "scene",
+      "uuid": "91af2b28-be0f-4eb3-be38-89f84a4f1770",
+      "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+      "prev_ver": 537001986,
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1.0,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "name": "Helper Scene 6",
+      "hotkeys": {},
+      "private_settings": {},
+      "settings": {
+        "id_counter": 3,
+        "custom_size": false,
+        "items": [
+          {
+            "id": 1,
+            "source_uuid": "bdde74a8-670f-4e78-8da9-9e01a10ce847",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -1.0
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Colour 2",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 2,
+            "source_uuid": "5f6bb412-b9f0-46a6-af9f-271183ae6ad6",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 380.0,
+              "y": 618.5
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -1.25,
+              "y": -0.14097219705581665
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Text 1",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 3,
+            "source_uuid": "45e20d7a-811f-4675-b1b0-cc445c8e3216",
+            "visible": false,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 380.0,
+              "y": 618.5
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -1.25,
+              "y": -0.14097219705581665
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Text 2",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "scene",
+      "versioned_id": "scene",
+      "uuid": "ec2f6977-8fc0-414f-8032-c3013f10f06e",
+      "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+      "prev_ver": 537001986,
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1.0,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "name": "WORK - FACE: ON, DESK: ON",
+      "hotkeys": {},
+      "private_settings": {},
+      "settings": {
+        "id_counter": 18,
+        "custom_size": false,
+        "items": [
+          {
+            "id": 1,
+            "source_uuid": "d9a38b38-958a-4b21-a130-d13248d107c9",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -1.0
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Helper Scene 3",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 5,
+            "source_uuid": "f62cede6-7701-42df-9113-851a600e11d5",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -1.0
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Helper Scene 4",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 11,
+            "source_uuid": "d0d3902e-603b-48c0-9019-32bf003939ed",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 1934.0,
+              "y": 377.0
+            },
+            "scale": {
+              "x": 0.23867186903953552,
+              "y": 0.23888888955116272
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": 0.9083333611488342,
+              "y": -0.4763888716697693
+            },
+            "scale_rel": {
+              "x": 0.23867186903953552,
+              "y": 0.23888888955116272
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Helper Scene 2",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 12,
+            "source_uuid": "5152d319-2804-4815-bb9f-56a00e7e9a27",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 1934.0,
+              "y": 377.0
+            },
+            "scale": {
+              "x": 0.23867186903953552,
+              "y": 0.23888888955116272
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": 0.9083333611488342,
+              "y": -0.4763888716697693
+            },
+            "scale_rel": {
+              "x": 0.23867186903953552,
+              "y": 0.23888888955116272
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Helper Scene 7",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 13,
+            "source_uuid": "508b3c71-75aa-413c-b758-4e55f19998ef",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 1934.0,
+              "y": 15.0
+            },
+            "scale": {
+              "x": 0.23867186903953552,
+              "y": 0.23888888955116272
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": 0.9083333611488342,
+              "y": -0.9791666865348816
+            },
+            "scale_rel": {
+              "x": 0.23867186903953552,
+              "y": 0.23888888955116272
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Helper Scene 1",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 14,
+            "source_uuid": "5152d319-2804-4815-bb9f-56a00e7e9a27",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 1934.0,
+              "y": 15.0
+            },
+            "scale": {
+              "x": 0.23867186903953552,
+              "y": 0.23888888955116272
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": 0.9083333611488342,
+              "y": -0.9791666865348816
+            },
+            "scale_rel": {
+              "x": 0.23867186903953552,
+              "y": 0.23888888955116272
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Helper Scene 7",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 17,
+            "source_uuid": "123c7d4e-4a63-411a-baf7-973089593160",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -1.0
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Microphone",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "scene",
+      "versioned_id": "scene",
+      "uuid": "5152d319-2804-4815-bb9f-56a00e7e9a27",
+      "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+      "prev_ver": 537001986,
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1.0,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "name": "Helper Scene 7",
+      "hotkeys": {},
+      "private_settings": {},
+      "settings": {
+        "id_counter": 4,
+        "custom_size": false,
+        "items": [
+          {
+            "id": 1,
+            "source_uuid": "04fbead1-7407-4ebf-b816-e5c942d0b1bb",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 0.0,
+              "y": 1415.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": 0.9652777910232544
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Colour 3",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 2,
+            "source_uuid": "04fbead1-7407-4ebf-b816-e5c942d0b1bb",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -1.0
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Colour 3",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 3,
+            "source_uuid": "6668c6c9-b4da-4f86-99ae-94b74565fcb8",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 0.0,
+              "y": 25.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -0.9652777910232544
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Colour 4",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 4,
+            "source_uuid": "6668c6c9-b4da-4f86-99ae-94b74565fcb8",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 2535.0,
+              "y": 25.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": 1.7430555820465088,
+              "y": -0.9652777910232544
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Colour 4",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "scene",
+      "versioned_id": "scene",
+      "uuid": "8ec6e978-0d6d-45c4-86f8-85a1e264bb16",
+      "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+      "prev_ver": 537001986,
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1.0,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "name": "WORK - FACE: ON, DESK: OFF",
+      "hotkeys": {},
+      "private_settings": {},
+      "settings": {
+        "id_counter": 10,
+        "custom_size": false,
+        "items": [
+          {
+            "id": 1,
+            "source_uuid": "d9a38b38-958a-4b21-a130-d13248d107c9",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -1.0
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Helper Scene 3",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 2,
+            "source_uuid": "f62cede6-7701-42df-9113-851a600e11d5",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -1.0
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Helper Scene 4",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 9,
+            "source_uuid": "5152d319-2804-4815-bb9f-56a00e7e9a27",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 1934.0,
+              "y": 377.0
+            },
+            "scale": {
+              "x": 0.23867186903953552,
+              "y": 0.23888888955116272
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": 0.9083333611488342,
+              "y": -0.4763888716697693
+            },
+            "scale_rel": {
+              "x": 0.23867186903953552,
+              "y": 0.23888888955116272
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Helper Scene 7",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 6,
+            "source_uuid": "508b3c71-75aa-413c-b758-4e55f19998ef",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 1934.0,
+              "y": 15.0
+            },
+            "scale": {
+              "x": 0.23867186903953552,
+              "y": 0.23888888955116272
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": 0.9083333611488342,
+              "y": -0.9791666865348816
+            },
+            "scale_rel": {
+              "x": 0.23867186903953552,
+              "y": 0.23888888955116272
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Helper Scene 1",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 7,
+            "source_uuid": "5152d319-2804-4815-bb9f-56a00e7e9a27",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 1934.0,
+              "y": 15.0
+            },
+            "scale": {
+              "x": 0.23867186903953552,
+              "y": 0.23888888955116272
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": 0.9083333611488342,
+              "y": -0.9791666865348816
+            },
+            "scale_rel": {
+              "x": 0.23867186903953552,
+              "y": 0.23888888955116272
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Helper Scene 7",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 10,
+            "source_uuid": "123c7d4e-4a63-411a-baf7-973089593160",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -1.0
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Microphone",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "scene",
+      "versioned_id": "scene",
+      "uuid": "b6e80517-37a3-481b-8903-ddb91021bad0",
+      "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+      "prev_ver": 537001986,
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1.0,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "name": "WORK - FACE: OFF, DESK: ON",
+      "hotkeys": {},
+      "private_settings": {},
+      "settings": {
+        "id_counter": 8,
+        "custom_size": false,
+        "items": [
+          {
+            "id": 1,
+            "source_uuid": "d9a38b38-958a-4b21-a130-d13248d107c9",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -1.0
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Helper Scene 3",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 2,
+            "source_uuid": "f62cede6-7701-42df-9113-851a600e11d5",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -1.0
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Helper Scene 4",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 3,
+            "source_uuid": "d0d3902e-603b-48c0-9019-32bf003939ed",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 1934.0,
+              "y": 377.0
+            },
+            "scale": {
+              "x": 0.23867186903953552,
+              "y": 0.23888888955116272
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": 0.9083333611488342,
+              "y": -0.4763888716697693
+            },
+            "scale_rel": {
+              "x": 0.23867186903953552,
+              "y": 0.23888888955116272
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Helper Scene 2",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 4,
+            "source_uuid": "5152d319-2804-4815-bb9f-56a00e7e9a27",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 1934.0,
+              "y": 377.0
+            },
+            "scale": {
+              "x": 0.23867186903953552,
+              "y": 0.23888888955116272
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": 0.9083333611488342,
+              "y": -0.4763888716697693
+            },
+            "scale_rel": {
+              "x": 0.23867186903953552,
+              "y": 0.23888888955116272
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Helper Scene 7",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 6,
+            "source_uuid": "5152d319-2804-4815-bb9f-56a00e7e9a27",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 1934.0,
+              "y": 15.0
+            },
+            "scale": {
+              "x": 0.23867186903953552,
+              "y": 0.23888888955116272
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": 0.9083333611488342,
+              "y": -0.9791666865348816
+            },
+            "scale_rel": {
+              "x": 0.23867186903953552,
+              "y": 0.23888888955116272
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Helper Scene 7",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 8,
+            "source_uuid": "123c7d4e-4a63-411a-baf7-973089593160",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -1.0
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Microphone",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "scene",
+      "versioned_id": "scene",
+      "uuid": "656a79e1-3c63-4a75-b507-c47f732aa7bf",
+      "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+      "prev_ver": 537001986,
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1.0,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "name": "WORK - FACE: OFF, DESK: OFF",
+      "hotkeys": {},
+      "private_settings": {},
+      "settings": {
+        "id_counter": 8,
+        "custom_size": false,
+        "items": [
+          {
+            "id": 1,
+            "source_uuid": "d9a38b38-958a-4b21-a130-d13248d107c9",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -1.0
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Helper Scene 3",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 2,
+            "source_uuid": "f62cede6-7701-42df-9113-851a600e11d5",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -1.0
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Helper Scene 4",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 4,
+            "source_uuid": "5152d319-2804-4815-bb9f-56a00e7e9a27",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 1934.0,
+              "y": 377.0
+            },
+            "scale": {
+              "x": 0.23867186903953552,
+              "y": 0.23888888955116272
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": 0.9083333611488342,
+              "y": -0.4763888716697693
+            },
+            "scale_rel": {
+              "x": 0.23867186903953552,
+              "y": 0.23888888955116272
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Helper Scene 7",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 6,
+            "source_uuid": "5152d319-2804-4815-bb9f-56a00e7e9a27",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 1934.0,
+              "y": 15.0
+            },
+            "scale": {
+              "x": 0.23867186903953552,
+              "y": 0.23888888955116272
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": 0.9083333611488342,
+              "y": -0.9791666865348816
+            },
+            "scale_rel": {
+              "x": 0.23867186903953552,
+              "y": 0.23888888955116272
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Helper Scene 7",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 8,
+            "source_uuid": "123c7d4e-4a63-411a-baf7-973089593160",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -1.0
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Microphone",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "scene",
+      "versioned_id": "scene",
+      "uuid": "b34eec4e-3465-4017-859a-fa91f5118a64",
+      "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+      "prev_ver": 537001986,
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1.0,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "name": "Helper Scene 8",
+      "hotkeys": {},
+      "private_settings": {},
+      "settings": {
+        "id_counter": 1,
+        "custom_size": false,
+        "items": [
+          {
+            "id": 1,
+            "source_uuid": "1c41d87a-a995-48f2-9d22-02bf89717514",
+            "visible": true,
+            "locked": false,
+            "rot": 0.0,
+            "pos": {
+              "x": 920.0,
+              "y": 1261.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -0.5,
+              "y": 0.7513889074325562
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Text 3",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "scene",
+      "versioned_id": "scene",
+      "uuid": "77bb1eb9-4632-4bdf-a1df-be6538d0f782",
+      "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+      "prev_ver": 537001986,
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1.0,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "name": "TALK - DESK",
+      "hotkeys": {},
+      "private_settings": {},
+      "settings": {
+        "id_counter": 5,
+        "custom_size": false,
+        "items": [
+          {
+            "id": 1,
+            "source_uuid": "d0d3902e-603b-48c0-9019-32bf003939ed",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -1.0
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Helper Scene 2",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 2,
+            "source_uuid": "123c7d4e-4a63-411a-baf7-973089593160",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -1.0
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Microphone",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 5,
+            "source_uuid": "ec4536e3-edad-4990-949c-b23c120660a3",
+            "visible": true,
+            "locked": false,
+            "rot": 0.0,
+            "pos": {
+              "x": 803.5,
+              "y": 1107.0
+            },
+            "scale": {
+              "x": 1.5622950792312622,
+              "y": 1.5625
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -0.6618055701255798,
+              "y": 0.5375000238418579
+            },
+            "scale_rel": {
+              "x": 1.5622950792312622,
+              "y": 1.5625
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Stream Keys",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "scene",
+      "versioned_id": "scene",
+      "uuid": "689f80d4-af4e-4ec6-99c7-c85f3f65ecd2",
+      "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+      "prev_ver": 537001986,
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1.0,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "name": "TALK - FACE",
+      "hotkeys": {},
+      "private_settings": {},
+      "settings": {
+        "id_counter": 6,
+        "custom_size": false,
+        "items": [
+          {
+            "id": 1,
+            "source_uuid": "508b3c71-75aa-413c-b758-4e55f19998ef",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -1.0
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Helper Scene 1",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 3,
+            "source_uuid": "5152d319-2804-4815-bb9f-56a00e7e9a27",
+            "visible": false,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -1.0
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Helper Scene 7",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 4,
+            "source_uuid": "123c7d4e-4a63-411a-baf7-973089593160",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -1.0
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Microphone",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "scene",
+      "versioned_id": "scene",
+      "uuid": "f20f8f86-b2b9-435f-9ab4-794280aed979",
+      "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+      "prev_ver": 537001986,
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1.0,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "name": "TALK - DESK + FACE",
+      "hotkeys": {},
+      "private_settings": {},
+      "settings": {
+        "id_counter": 7,
+        "custom_size": false,
+        "items": [
+          {
+            "id": 2,
+            "source_uuid": "d0d3902e-603b-48c0-9019-32bf003939ed",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -1.0
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Helper Scene 2",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 3,
+            "source_uuid": "508b3c71-75aa-413c-b758-4e55f19998ef",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 1934.0,
+              "y": 15.0
+            },
+            "scale": {
+              "x": 0.23867186903953552,
+              "y": 0.23888888955116272
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": 0.9083333611488342,
+              "y": -0.9791666865348816
+            },
+            "scale_rel": {
+              "x": 0.23867186903953552,
+              "y": 0.23888888955116272
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Helper Scene 1",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 4,
+            "source_uuid": "5152d319-2804-4815-bb9f-56a00e7e9a27",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 1934.0,
+              "y": 15.0
+            },
+            "scale": {
+              "x": 0.23867186903953552,
+              "y": 0.23888888955116272
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": 0.9083333611488342,
+              "y": -0.9791666865348816
+            },
+            "scale_rel": {
+              "x": 0.23867186903953552,
+              "y": 0.23888888955116272
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Helper Scene 7",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 6,
+            "source_uuid": "123c7d4e-4a63-411a-baf7-973089593160",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -1.0
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Microphone",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 7,
+            "source_uuid": "ec4536e3-edad-4990-949c-b23c120660a3",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 803.5,
+              "y": 1107.0
+            },
+            "scale": {
+              "x": 1.5622950792312622,
+              "y": 1.5625
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -0.6618055701255798,
+              "y": 0.5375000238418579
+            },
+            "scale_rel": {
+              "x": 1.5622950792312622,
+              "y": 1.5625
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Stream Keys",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "scene",
+      "versioned_id": "scene",
+      "uuid": "91686a15-0973-4ed8-928a-80677e46c5af",
+      "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+      "prev_ver": 537001986,
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1.0,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "name": "PRIVACY",
+      "hotkeys": {},
+      "private_settings": {},
+      "settings": {
+        "id_counter": 1,
+        "custom_size": false,
+        "items": [
+          {
+            "id": 1,
+            "source_uuid": "65299229-f101-44d4-98c2-00df69c8bf80",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -1.0
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Privacy Card",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "scene",
+      "versioned_id": "scene",
+      "uuid": "b9d6f128-2f1c-4823-841e-55a9ee3a718e",
+      "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+      "prev_ver": 537001986,
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1.0,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "name": "TALK - FACE + CHAT",
+      "hotkeys": {},
+      "private_settings": {},
+      "settings": {
+        "id_counter": 6,
+        "custom_size": false,
+        "items": [
+          {
+            "id": 1,
+            "source_uuid": "508b3c71-75aa-413c-b758-4e55f19998ef",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -1.0
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Helper Scene 1",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 2,
+            "source_uuid": "5152d319-2804-4815-bb9f-56a00e7e9a27",
+            "visible": false,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -1.0
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Helper Scene 7",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 3,
+            "source_uuid": "123c7d4e-4a63-411a-baf7-973089593160",
+            "visible": true,
+            "locked": true,
+            "rot": 0.0,
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -1.0
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Microphone",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 5,
+            "source_uuid": "7a555177-85bb-4e15-b54a-e4624e30e732",
+            "visible": true,
+            "locked": false,
+            "rot": 0.0,
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -1.0
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": true,
+            "name": "Colour 5",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 4,
+            "source_uuid": "29c44986-07b1-449c-8391-101b3acf6fe9",
+            "visible": true,
+            "locked": false,
+            "rot": 0.0,
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -1.0
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": true,
+            "name": "Stream Chat",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 6,
+            "source_uuid": "ff69a590-437c-44ce-a731-49bf94e2f6c5",
+            "visible": true,
+            "locked": false,
+            "rot": 0.0,
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -1.0
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Group 1",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 0
+            },
+            "hide_transition": {
+              "duration": 0
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "groups": [
+    {
+      "id": "group",
+      "versioned_id": "group",
+      "uuid": "ff69a590-437c-44ce-a731-49bf94e2f6c5",
+      "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+      "prev_ver": 537001986,
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1.0,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "name": "Group 1",
+      "hotkeys": {},
+      "private_settings": {},
+      "settings": {
+        "id_counter": 0,
+        "custom_size": true,
+        "cx": 610,
+        "cy": 470,
+        "items": [
+          {
+            "id": 5,
+            "source_uuid": "7a555177-85bb-4e15-b54a-e4624e30e732",
+            "visible": true,
+            "locked": false,
+            "rot": 0.0,
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -1.0
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Colour 5",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          },
+          {
+            "id": 4,
+            "source_uuid": "29c44986-07b1-449c-8391-101b3acf6fe9",
+            "visible": true,
+            "locked": false,
+            "rot": 0.0,
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "bounds": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds_crop": false,
+            "align": 5,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "crop_bottom": 0,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "pos_rel": {
+              "x": -1.7777777910232544,
+              "y": -1.0
+            },
+            "scale_rel": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_ref": {
+              "x": 2560.0,
+              "y": 1440.0
+            },
+            "bounds_rel": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "group_item_backup": false,
+            "name": "Stream Chat",
+            "private_settings": {},
+            "show_transition": {
+              "duration": 300
+            },
+            "hide_transition": {
+              "duration": 300
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "scene_order": [
+    {
+      "name": "PRIVACY"
+    },
+    {
+      "name": "WORK - FACE: ON, DESK: ON"
+    },
+    {
+      "name": "WORK - FACE: OFF, DESK: ON"
+    },
+    {
+      "name": "WORK - FACE: ON, DESK: OFF"
+    },
+    {
+      "name": "WORK - FACE: OFF, DESK: OFF"
+    },
+    {
+      "name": "TALK - FACE"
+    },
+    {
+      "name": "TALK - FACE + CHAT"
+    },
+    {
+      "name": "TALK - DESK"
+    },
+    {
+      "name": "TALK - DESK + FACE"
+    },
+    {
+      "name": "Helper Scene 8"
+    },
+    {
+      "name": "Helper Scene 4"
+    },
+    {
+      "name": "Helper Scene 7"
+    },
+    {
+      "name": "Helper Scene 5"
+    },
+    {
+      "name": "Helper Scene 6"
+    },
+    {
+      "name": "Helper Scene 3"
+    },
+    {
+      "name": "Helper Scene 1"
+    },
+    {
+      "name": "Helper Scene 2"
+    }
+  ],
+  "current_scene": "TALK - FACE + CHAT",
+  "current_program_scene": "TALK - FACE + CHAT",
+  "current_transition": "Fade",
+  "transition_duration": 100,
+  "transitions": [],
+  "quick_transitions": [],
+  "saved_projectors": [],
+  "modules": {},
+  "virtual-camera": {},
+  "DesktopAudioDevice1": {
+    "id": "pulse_output_capture",
+    "versioned_id": "pulse_output_capture",
+    "uuid": "72141ebd-d81e-4c9a-a1b0-2776b120dd6d",
+    "prev_ver": 537001986,
+    "mixers": 255,
+    "sync": 0,
+    "flags": 0,
+    "volume": 0.09172927588224411,
+    "balance": 0.5,
+    "enabled": true,
+    "muted": true,
+    "push-to-mute": false,
+    "push-to-mute-delay": 0,
+    "push-to-talk": false,
+    "push-to-talk-delay": 0,
+    "deinterlace_mode": 0,
+    "deinterlace_field_order": 0,
+    "monitoring_type": 0,
+    "name": "Desktop Audio",
+    "settings": {
+      "device_id": "SELECT_LOCAL_AUDIO_DEVICE"
+    },
+    "hotkeys": {},
+    "private_settings": {}
+  }
+}

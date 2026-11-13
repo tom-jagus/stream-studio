@@ -31,8 +31,9 @@ Starting prepares viewers; Break conceals the desktop and mutes the microphone;
 Ending summarizes the session. Privacy is a separate immediate concealment and
 mute action, not a command to stop broadcasting. B003 introduces its simple,
 browser-independent version; this brief owns any later presentation expansion.
-Preserve its microphone-only muting policy, unchanged desktop/music audio, and
-microphone mute on exit until an explicit unmute.
+Preserve its microphone exclusion during Privacy and unchanged desktop/music
+audio. On leaving Privacy, the microphone may become audible if it was not
+separately muted.
 
 The first presentation feature is a Python local service and a transparent topic
 Browser Source, operated through a `stream` command. Store topic state under

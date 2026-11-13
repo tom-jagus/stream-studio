@@ -44,6 +44,15 @@ machine settings or duplicating camera tuning.
 - [ ] Agree on a safe restoration-test location or method before importing.
 - [ ] Perform the authorized check and report any gaps against accepted layouts.
 
+## Current artifacts
+
+A newer sanitized scene snapshot and a separate-collection installation script
+are available in [OBS scene snapshots](../../../obs/README.md). They include the
+later browser sources and added scene, but still require manual device, text,
+and permission setup. Structural inspection is not an OBS restoration test.
+The earlier snapshot remains available. This slice is not complete; its
+Privacy dependency and a safe restoration check remain outstanding.
+
 ## Open questions
 
 - Which OBS export and restoration mechanism preserves the chosen shared sources

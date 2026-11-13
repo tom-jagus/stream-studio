@@ -8,12 +8,16 @@ retry, failure handling, and browser rendering have not been fully verified.
 
 ## Setup
 
-Use Python 3.12 or newer and install the chat extra from this checkout. Include
-`keys` as shown if the keystroke overlay is also in use.
+Use Python 3.12 or newer. Stop any running Stream Studio service before
+replacing its Python environment, then install the keys and chat extras from
+this checkout:
 
 ```bash
-uv tool install --force --editable '.[keys,chat]'
+bash install-services.sh
 ```
+
+The installer preserves an existing user unit; verify that it points to the
+intended Python environment.
 
 In Google Cloud, create or select a project, enable the YouTube Data API v3,
 and create an API key. Apply restrictions appropriate to your setup and allow

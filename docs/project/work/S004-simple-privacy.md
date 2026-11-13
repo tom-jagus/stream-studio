@@ -2,29 +2,28 @@
 id: S004
 status: In progress
 parent: B003
-blocked_by: Current scene routing conflicts with explicit unmute on exit; output tests remain unverified.
+blocked_by: Immediate entry and composed output tests remain unverified.
 ---
 
 # Simple independent Privacy scene
 
 ## Outcome
 
-Provide an immediate concealment and microphone-mute option that works without
-a browser background or local presentation service.
+Provide immediate concealment and microphone exclusion that work without a
+browser background or local presentation service.
 
 ## Acceptance criteria
 
 - Entering Privacy replaces captured screen and camera content with a simple
-  non-capture presentation and mutes the stream microphone.
+  non-capture presentation and excludes the microphone from the stream mix.
 - Privacy works without a local service or Browser Source and does not stop the
   broadcast. A plain static colour is sufficient; elaborate artwork is excluded.
-- The microphone stays muted while Privacy is active and after leaving it.
-  Unmuting requires an explicit action. Entry and exit are tested from both
+- Privacy excludes the microphone while active. On leaving Privacy, it may
+  become audible if not separately muted. Entry and exit are tested from both
   initially muted and unmuted states; repeated entry does not unmute it.
 - Testing checks the composed video and stream audio path, not just a hidden
-  source or a scene name. Privacy changes only microphone mute; desktop audio
-  and music retain their existing state. Microphone mute is not presented as a
-  guarantee of complete silence.
+  source or a scene name. Privacy excludes the microphone while desktop audio
+  and music retain their existing state. This is not a guarantee of silence.
 - A manual way to select Privacy is documented without requiring Vial controls
   or completion of the other scene slices.
 
@@ -33,33 +32,26 @@ a browser background or local presentation service.
 - [x] Select the static branded holding card and supply SVG and PNG assets.
 - [x] Inspect the saved scene graph and microphone routing, refresh the sanitized
       snapshot, and document manual selection and current limitations.
-- [ ] Resolve the conflict between scene-specific microphone inclusion and the
-      required muted state after leaving Privacy. Do not change the criteria
-      without Tom's agreement.
+- [x] Agree on microphone behavior after leaving Privacy. Tom accepts automatic
+      return when the shared source was not separately muted.
 - [ ] Provide immediate Privacy entry rather than the saved 100 ms Fade, and
       implement the agreed microphone policy.
 - [ ] Test composed video and output audio on entry, repeated entry, and exit
       from initially muted and unmuted states, with the browser service absent.
 
-## Open questions
-
-- Should the original explicit-unmute-on-exit requirement remain, or should Tom
-  approve automatic microphone return when switching to Working/Talking?
-- If explicit unmute remains required, which mechanism will enforce it without
-  depending on a browser service? Scripts and plugin installation are deferred.
-
 ## Review
 
 The current implementation does not meet all existing acceptance criteria.
-Tom accepted the holding-card appearance and configured scene-specific audio,
-but has not reported the planned recording check. This review records interim
-findings at his request, not acceptance or a change to the criteria.
+Tom accepted the holding-card appearance and automatic microphone return, but
+has not reported the planned output check. The criteria above reflect the
+revised microphone policy; the slice is not yet accepted as complete.
 
 The saved active collection and profile were inspected read-only. The
 [sanitized snapshot and manual guidance](../../../obs/README.md) now preserve
-Privacy and the shared microphone routing. Output settings remain 1440p30 and
-match the repository reference. No live scene, device, mute state, recording,
-broadcast, or plugin installation was changed for this review.
+Privacy and the shared microphone routing. At the earlier inspection, saved
+output settings matched the repository's 1440p30 reference. No live scene,
+device, mute state, recording, broadcast, or plugin installation was changed
+for this review.
 
 - **Criterion 1, partial.** Local `PRIVACY` contains only the locked, opaque
   2560 × 1440 holding-card image at 1:1 scale, with no screen, camera, browser,
@@ -70,12 +62,10 @@ broadcast, or plugin installation was changed for this review.
   OBS Image source, without a Browser Source, local service, or stop-broadcast
   action. Tom selected this static branded card. Operation with the service
   unavailable has not been tested.
-- **Criterion 3, unmet.** Global Mic/Aux is absent. One unmuted PulseAudio
-  microphone source is reused once in each of the four Working and three
-  Talking scenes, and is absent from Privacy. No mute automation is configured.
-  Returning to a live scene includes the microphone again without explicit
-  unmute if it was unmuted before entry. Initially muted/unmuted and repeated
-  entry cases have not been tested in output audio.
+- **Criterion 3, structurally supported under the revised policy.** Global
+  Mic/Aux is absent. The shared microphone is omitted from Privacy and included
+  in live scenes. Tom accepts its automatic return when not separately muted.
+  Initially muted/unmuted and repeated entry cases remain untested in output.
 - **Criterion 4, unverified.** Desktop Audio remains global and unmuted in the
   saved local collection; no dedicated music capture was added. Structure
   preserves that path, but no recording, listening test, or composed-output
@@ -85,10 +75,10 @@ broadcast, or plugin installation was changed for this review.
   Studio Mode's Program transition requirement, and audio limitations without
   Vial. Manual operation has not been observed in a test.
 
-Before acceptance, resolve the microphone-return policy and immediate entry,
-then check actual output video and audio across entry, repeated entry, and
-exit from initially muted and unmuted states. Desktop audio/music must retain
-its intended state, and Privacy must remain usable without the browser service.
+Before acceptance, resolve immediate entry and check actual output video and
+audio across entry, repeated entry, and exit from initially muted and unmuted
+states. Desktop audio/music must retain its intended state, and Privacy must
+remain usable without the browser service.
 Restoration import remains untested and belongs to S005.
 
 ## Boundaries

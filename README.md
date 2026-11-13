@@ -10,21 +10,25 @@ workflow, with setup guidance so I can restore it without starting from scratch.
 
 The repository contains a Python local presentation service with a topic
 overlay, an experimental keystroke overlay, a YouTube chat overlay, a desktop
-preview, project plans, camera experiment findings, and a sanitized OBS Working,
-Talking, and Privacy scene snapshot with
-restoration guidance. The snapshot predates the browser overlays.
+preview, project plans, camera experiment findings, and sanitized OBS scene
+snapshots with restoration guidance.
 
 ## Get started
 
 With Python 3.12 or newer, uv, and a systemd user session, run from this checkout:
 
 ```bash
-uv tool install --editable .
-stream install-service
+bash install-services.sh
 stream topic "Building Stream Studio"
 stream start
 stream status
 ```
+
+The installer replaces the existing Stream Studio uv tool installation with an
+editable installation including the keys and chat extras. It refuses to update a
+running service, preserves an existing user unit, and does not start or enable
+the service. OBS, Chromium, system libraries, keyboard access, and YouTube
+credentials need separate setup; see the guides below.
 
 Add an OBS Browser Source pointing to `http://127.0.0.1:8766/topic` and position
 it in your scene. Install JetBrains Mono locally for the intended typography.
@@ -65,7 +69,7 @@ output with harmless content before streaming.
 - [Project charter](docs/project/charter.md): purpose, scope, and success criteria.
 - [Work index](docs/project/work.md): planned outcomes and current work.
 - [Camera experiments](docs/camera-experiments.md): findings and unresolved tuning.
-- [OBS scene snapshot](obs/README.md): saved scenes, settings, and restore limits.
+- [OBS scene snapshots](obs/README.md): saved scenes, settings, and restore limits.
 
 ## License
 

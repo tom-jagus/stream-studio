@@ -21,19 +21,20 @@ read these keyboards. Do not rely on the overlay to detect password fields.
 ## Install and operate
 
 This setup targets the current Hyprland and Omarchy desktop and its US layout
-with `omarchy:shift_caps_compose`. Install the optional dependencies from the
-checkout using the following command in place of the installation command in
-the [topic guide](topic-overlay.md):
+with `omarchy:shift_caps_compose`. To install both the keys and chat extras,
+stop any running Stream Studio service first, then run the repository installer
+from the checkout:
 
 ```bash
-uv tool install --editable '.[keys]'
+bash install-services.sh
 ```
 
-If the tool is already installed without the extra, use
-`uv tool install --force --editable '.[keys]'`. Restart an existing service
-after installing or changing the backend. The service unit points to the
-Python environment that created it. Follow the topic guide's remaining service
-setup and start steps if the service is not already installed.
+The installer replaces the existing Stream Studio uv tool installation and
+preserves an existing service unit. Verify that the unit points to the intended
+Python environment. Follow the [topic guide](topic-overlay.md) for the remaining
+service setup and start steps. For a keys-only installation, use
+`uv tool install --force --editable '.[keys]'` instead, but this omits the chat
+extra from the replacement installation.
 
 The optional rule `system/70-stream-studio-keyboards.rules` grants the active
 local session access to keyboard interfaces with the selected USB vendor and
@@ -99,5 +100,6 @@ suppression and their timing remain unverified. Use harmless input if checking
 these later, never a real password. Workspace gating and prompt detection do not
 replace manual off before sensitive input.
 
-The saved OBS scene snapshot predates this browser source and does not restore
-it. See [Slice 8](project/work/S008-keystroke-presentation.md) for the work item.
+The newer [OBS snapshot](../obs/README.md) includes this Browser Source, but its
+restoration has not been tested in OBS. See
+[Slice 8](project/work/S008-keystroke-presentation.md) for the work item.
