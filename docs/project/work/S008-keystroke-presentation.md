@@ -68,26 +68,17 @@ prompt suppression.
 
 ## Current findings and follow-up
 
-Tom reports that the latest changes improved the display. With
-`Ctrl+Shift+3`, the Herdr workspace shortcut works as expected. For
-`Ctrl+Shift+1`, `2`, `4`, and `5`, the observed behavior still looks like a
-Hyprland workspace change rather than a Herdr workspace change. Other Herdr
-workspaces were not available to test. The cause and whether the remaining
-behavior belongs to the overlay, Herdr, or desktop bindings are unconfirmed.
-Investigate the actual focus and input events before choosing a fix.
+Tom reports that the latest overlay changes and manual toggle appear to work.
+During Herdr workspace switches that cleared the display, Hyprland emitted
+active-window and title events but no workspace events. The implementation now
+ignores active-window events while retaining workspace and layer invalidation.
+The display supports up to eleven entries, omits standalone modifiers used in
+combinations, and groups identical consecutive presses on the third press.
 
-A shortcut such as `Ctrl+W` currently shows `Ctrl` first and then `Ctrl+W`.
-The desired display omits that standalone `Ctrl` when it becomes part of a
-combination. Consecutive identical presses currently combine on the second
-press; the desired behavior is to combine starting with the third. The exact
-presentation of the first two entries when the third arrives remains to be
-settled. These are follow-up requests, not evidence of completed fixes.
-
-The synthetic suite passed 43 tests after the latest changes. Tom reports basic
-capture and improved switching behavior, but the complete live checks in the
-acceptance criteria, including reconnect, lock and prompt timing, and output-size
-readability, remain outstanding. The current implementation has not been
-accepted as a completed slice.
+The earlier synthetic suite passed 43 tests. Tests added or changed since then
+have not been run. Complete live checks against the acceptance criteria, including
+reconnect, lock and prompt timing, and output-size readability, remain
+outstanding. The slice is not yet accepted as complete.
 
 ## Tasks
 
@@ -99,9 +90,11 @@ accepted as a completed slice.
       separate approval before changing system permissions or installing them.
 - [x] Add CLI controls and the keys browser page without changing topic behavior.
 - [x] Write synthetic tests for the implemented state and capture behavior.
-- [ ] Investigate the reported Herdr workspace shortcut behavior, suppress the
-      redundant standalone modifier in combinations, and change the repeat
-      grouping threshold after clarifying its presentation.
+- [x] Investigate the reported Herdr workspace clearing, suppress redundant
+      standalone modifiers, and group repeats starting on the third press.
+- [x] Increase the maximum display capacity to eleven entries while keeping
+      the single-row, oldest-first width limit.
+- [x] Add a manual `stream keys toggle` command.
 - [ ] Agree on and demonstrate the remaining safe live-device and OBS checks;
       update setup, privacy, recovery, and limitations guidance as needed.
 

@@ -2,7 +2,7 @@ import threading
 import unittest
 from unittest.mock import Mock, patch
 
-from stream_studio.keys_desktop import Desktop
+from stream_studio.keys_desktop import Desktop, TRANSITIONS
 
 
 class DesktopTests(unittest.TestCase):
@@ -31,6 +31,14 @@ class DesktopTests(unittest.TestCase):
         with patch("stream_studio.keys_desktop.subprocess.run",
                    return_value=Mock(returncode=0, stdout=shell)):
             return self.desktop._observe()[0]
+
+    def test_active_window_events_do_not_suspend_but_safety_events_do(self):
+        self.assertNotIn(b"activewindow", TRANSITIONS)
+        self.assertNotIn(b"activewindowv2", TRANSITIONS)
+        for event in (b"workspace", b"workspacev2", b"focusedmon",
+                      b"activespecial", b"openlayer", b"closelayer",
+                      b"activelayout", b"configreloaded"):
+            self.assertIn(event, TRANSITIONS)
 
     def test_focus_change_does_not_invalidate_keyboard_mapping(self):
         self.desktop._invalidate()

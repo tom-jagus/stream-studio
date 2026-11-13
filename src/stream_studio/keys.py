@@ -5,7 +5,7 @@ import time
 import uuid
 from collections import deque
 
-MAX_KEYS = 8
+MAX_KEYS = 11
 KEY_LIFETIME = 4.0
 OBSERVATION_LIFETIME = 0.5
 
@@ -58,8 +58,10 @@ class Keys:
     def command(self, action: str) -> dict:
         close_capture = None
         with self._lock:
-            if action not in {"on", "off", "status"}:
-                raise ValueError("Expected keys on, off, or status.")
+            if action not in {"on", "off", "toggle", "status"}:
+                raise ValueError("Expected keys on, off, toggle, or status.")
+            if action == "toggle":
+                action = "off" if self._enabled else "on"
             if action == "on" and not self._enabled:
                 self._enabled = True
                 self._observed = float("-inf")
@@ -114,12 +116,20 @@ class Keys:
                            or any(ord(char) < 32 for char in part) for part in parts)):
                 return
             now = self._clock()
+            entry = {"text": text, "parts": parts, "count": 1}
             if self._keys and self._keys[-1][1]["parts"] == parts:
-                _, previous = self._keys.pop()
-                entry = {"text": text, "parts": parts,
-                         "count": min(previous["count"] + 1, 999999)}
-            else:
-                entry = {"text": text, "parts": parts, "count": 1}
+                _, previous = self._keys[-1]
+                if previous["count"] >= 3:
+                    self._keys.pop()
+                    entry["count"] = min(previous["count"] + 1, 999999)
+                elif (len(self._keys) >= 2
+                      and self._keys[-2][1]["parts"] == parts):
+                    self._keys.pop()
+                    self._keys.pop()
+                    entry["count"] = 3
+                else:
+                    # Keep the first two presses separate, refreshing both.
+                    self._keys[-1] = (now, previous)
             self._keys.append((now, entry))
 
     def snapshot(self) -> dict:

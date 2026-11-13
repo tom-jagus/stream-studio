@@ -9,6 +9,11 @@ import time
 
 from .keys import suspension_reason
 
+TRANSITIONS = {b"workspace", b"workspacev2", b"focusedmon", b"focusedmonv2",
+               b"activespecial", b"activespecialv2", b"openlayer", b"closelayer",
+               b"monitoradded", b"monitorremoved", b"activelayout",
+               b"configreloaded"}
+
 
 class Desktop:
     def __init__(self):
@@ -52,11 +57,6 @@ class Desktop:
             self._updated = float("-inf")
 
     def _events(self):
-        transitions = {b"workspace", b"workspacev2", b"focusedmon", b"focusedmonv2",
-                       b"activewindow", b"activewindowv2", b"activespecial",
-                       b"activespecialv2", b"openlayer", b"closelayer",
-                       b"monitoradded", b"monitorremoved", b"activelayout",
-                       b"configreloaded"}
         while not self._stop.is_set():
             try:
                 with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as connection:
@@ -78,7 +78,7 @@ class Desktop:
                             line, _, remainder = pending.partition(b"\n")
                             pending = bytearray(remainder)
                             event = bytes(line.partition(b">>")[0])
-                            if event in transitions:
+                            if event in TRANSITIONS:
                                 self._invalidate(mapping_changed=event in {
                                     b"activelayout", b"configreloaded"
                                 })

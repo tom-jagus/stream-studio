@@ -6,6 +6,12 @@ from pathlib import Path
 
 from .keys_desktop import Desktop
 
+# Linux evdev modifier key codes, independent of their mapped symbols.
+MODIFIERS = {
+    29: "Ctrl", 97: "Ctrl", 56: "Alt", 100: "Alt",
+    125: "Super", 126: "Super", 42: "Shift", 54: "Shift",
+}
+
 
 class Capture:
     def __init__(self, keys):
@@ -14,6 +20,7 @@ class Capture:
         self._stop = threading.Event()
         self._devices = {}
         self._down = {}
+        self._pending_modifiers = {}
         self._state = None
         self._revision = None
         self._keyboard_revision = None
@@ -28,6 +35,7 @@ class Capture:
                 device.close()
             self._devices.clear()
             self._down.clear()
+            self._pending_modifiers.clear()
             self._state = None
 
     def _paths(self):
@@ -88,8 +96,14 @@ class Capture:
         code, value = event.code, event.value
         if value not in (0, 1, 2):
             raise OSError("Invalid key event")
+        if ticket is None:
+            self._pending_modifiers.clear()
         union_before = set().union(*self._down.values())
         if value == 0:
+            pending = self._pending_modifiers.pop((path, code), None)
+            if pending is not None and pending == ticket:
+                label = MODIFIERS[code]
+                self.keys.publish(label, pending, parts=[label])
             self._down[path].discard(code)
             union_after = set().union(*self._down.values())
             if code in union_before and code not in union_after:
@@ -101,9 +115,16 @@ class Capture:
             return
         if code in self._down[path]:
             return
-        # Suspended events update only keyboard state, never display content.
-        if ticket is not None:
-            self._publish_key(code, union_before, evdev, xkb, ticket)
+        if code in MODIFIERS:
+            # A modifier alone is shown on release, unless a non-modifier key
+            # uses it first. Keep the original ticket so suspension revokes it.
+            if ticket is not None and not (union_before - MODIFIERS.keys()):
+                self._pending_modifiers[(path, code)] = ticket
+        else:
+            self._pending_modifiers.clear()
+            # Suspended events update only keyboard state, never display content.
+            if ticket is not None:
+                self._publish_key(code, union_before, evdev, xkb, ticket)
         self._down[path].add(code)
         if code not in union_before:
             self._state.update_key(code + 8, xkb.KeyDirection.XKB_KEY_DOWN)
@@ -138,6 +159,8 @@ class Capture:
         self.keys.publish("+".join(parts), ticket, parts=parts)
 
     def _drain(self, evdev, xkb, ticket):
+        if ticket is None:
+            self._pending_modifiers.clear()
         ready, _, _ = select.select(list(self._devices.values()), [], [], 0)
         for device in ready:
             path = next(path for path, candidate in self._devices.items()

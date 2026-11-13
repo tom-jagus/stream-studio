@@ -41,6 +41,31 @@ class KeysTests(unittest.TestCase):
         self.keys.publish("c", ticket)
         self.assertEqual(self.keys.snapshot()["keys"], [])
 
+    def test_toggle_enables_then_disables_and_closes_capture(self):
+        close = Mock()
+        self.keys.attach(close)
+        self.assertEqual(self.keys.command("toggle")["state"], "suspended")
+        self.keys.observe(None)
+        ticket = self.keys.ticket()
+        self.keys.publish("a", ticket)
+        self.assertEqual(self.keys.command("toggle")["state"], "disabled")
+        close.assert_called_once_with()
+        self.assertEqual(self.keys.snapshot()["keys"], [])
+        self.keys.observe(None)
+        self.keys.publish("b", ticket)
+        self.assertEqual(self.keys.snapshot()["keys"], [])
+
+    def test_toggle_while_suspended_disables_instead_of_enabling(self):
+        close = Mock()
+        self.keys.attach(close)
+        self.enable()
+        self.keys.observe("Workspace not permitted")
+        self.assertEqual(self.keys.command("toggle")["state"], "disabled")
+        close.assert_called_once_with()
+        self.keys.observe(None)
+        self.assertEqual(self.keys.status()["state"], "disabled")
+        self.assertEqual(self.keys.command("toggle")["state"], "suspended")
+
     def test_suspension_discards_old_events_on_resume(self):
         ticket = self.enable()
         self.keys.publish("a", ticket)
@@ -86,6 +111,52 @@ class KeysTests(unittest.TestCase):
         self.assertEqual([(entry["text"], entry["count"]) for entry in entries],
                          [("j", 3), ("w", 1), ("j", 1)])
 
+    def test_two_presses_stay_separate_then_third_collapses_them(self):
+        ticket = self.enable()
+        for text in ["l", "o", "o"]:
+            self.keys.publish(text, ticket)
+        self.assertEqual([(entry["text"], entry["count"])
+                          for entry in self.keys.snapshot()["keys"]],
+                         [("l", 1), ("o", 1), ("o", 1)])
+        self.keys.publish("o", ticket)
+        self.assertEqual([(entry["text"], entry["count"])
+                          for entry in self.keys.snapshot()["keys"]],
+                         [("l", 1), ("o", 3)])
+        self.keys.publish("o", ticket)
+        self.assertEqual(self.keys.snapshot()["keys"][-1]["count"], 4)
+
+    def test_third_press_collapses_at_capacity_without_losing_older_entry(self):
+        ticket = self.enable()
+        for index in range(MAX_KEYS - 2):
+            self.keys.publish(str(index), ticket)
+        self.keys.publish("o", ticket)
+        self.keys.publish("o", ticket)
+        self.assertEqual(len(self.keys.snapshot()["keys"]), 11)
+        self.keys.publish("o", ticket)
+        entries = self.keys.snapshot()["keys"]
+        self.assertEqual(len(entries), 10)
+        self.assertEqual(entries[0]["text"], "0")
+        self.assertEqual(entries[-1]["count"], 3)
+
+    def test_suspension_breaks_two_press_sequence(self):
+        ticket = self.enable()
+        self.keys.publish("o", ticket)
+        self.keys.publish("o", ticket)
+        self.keys.observe("Workspace not permitted")
+        self.keys.observe(None)
+        self.keys.publish("o", self.keys.ticket())
+        self.assertEqual([entry["count"] for entry in self.keys.snapshot()["keys"]], [1])
+
+    def test_expired_pair_does_not_join_new_press(self):
+        self.enable()
+        self.keys.publish("o", self.keys.ticket())
+        self.keys.publish("o", self.keys.ticket())
+        for tick in range(1, 12):
+            self.now = tick * 0.4
+            self.keys.observe(None)
+        self.keys.publish("o", self.keys.ticket())
+        self.assertEqual([entry["count"] for entry in self.keys.snapshot()["keys"]], [1])
+
     def test_matching_press_refreshes_lifetime(self):
         self.enable()
         self.keys.publish("j", self.keys.ticket())
@@ -96,7 +167,8 @@ class KeysTests(unittest.TestCase):
         for tick in range(8, 12):
             self.now = tick * 0.4
             self.keys.observe(None)
-        self.assertEqual(self.keys.snapshot()["keys"][0]["count"], 2)
+        self.assertEqual([entry["count"] for entry in self.keys.snapshot()["keys"]],
+                         [1, 1])
 
     def test_snapshot_does_not_expose_mutable_parts(self):
         self.enable()
@@ -136,6 +208,8 @@ class ControlTests(unittest.TestCase):
                     self.assertEqual(path.stat().st_mode & 0o777, 0o600)
                     self.assertEqual(request("status")["state"], "disabled")
                     self.assertEqual(request("on")["state"], "suspended")
+                    self.assertEqual(request("toggle")["state"], "disabled")
+                    self.assertEqual(request("toggle")["state"], "suspended")
                     self.assertEqual(request("off")["state"], "disabled")
                     self.assertNotIn("keys", request("status"))
                     with self.assertRaises(OSError):

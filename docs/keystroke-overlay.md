@@ -48,11 +48,15 @@ With the service running, use:
 
 ```bash
 stream keys on
+stream keys toggle
 stream keys status
 stream keys off
 ```
 
-Status reports disabled, suspended, or presenting and a reason, not key history.
+Toggle switches the manual enabled state. If capture is enabled but suspended,
+toggle turns it off and closes the devices. Use `off`, not toggle, before
+sensitive input because `off` is unambiguous. Status reports disabled,
+suspended, or presenting and a reason, not key history.
 The reader uses passive input access without an exclusive grab or injection.
 Only the selected keyboard interfaces are opened, not the laptop keyboard or
 unrelated devices. Device loss, input overflow, mapping changes, or uncertain
@@ -60,10 +64,12 @@ state can require recovery; release held keys if activation remains suspended.
 
 Add an OBS Browser Source at `http://127.0.0.1:8766/keys` and size and position
 it in OBS. Install JetBrains Mono for the intended appearance. The page is
-transparent and displays one row of up to eight key entries; older entries are
-removed when the row is full. Entries expire after four seconds, refreshed by
-a consecutive repeat. Held-key auto-repeat is ignored. Currently, separate
-consecutive identical presses combine on the second press with a count.
+transparent and displays one row of up to eleven key entries; older entries
+are removed when the row is full or too narrow. Entries expire after four
+seconds, refreshed by a consecutive repeat. Held-key auto-repeat is ignored.
+The first two identical presses appear separately; the third combines them into
+one entry with a count. A modifier used in a combination does not appear as a
+separate entry; a modifier pressed alone appears when released.
 
 Presentation is allowed only on focused workspaces 1 through 5. Other, special,
 unknown, or uncertain workspaces suspend it, as do observed lock and Omarchy
@@ -83,17 +89,15 @@ therefore make the displayed keys differ from the resulting text.
 
 ## Current limitations and verification
 
-Tom reports that capture works and that the latest changes improved switching.
-`Ctrl+Shift+3` works as a Herdr workspace shortcut, while `Ctrl+Shift+1`, `2`,
-`4`, and `5` still appear to act like Hyprland workspace changes. The cause is
-not established, and additional Herdr workspaces have not been tested.
+Tom reports that the latest overlay and toggle changes appear to work. During
+Herdr workspace switches that cleared the overlay, Hyprland emitted active-window
+and title events, but no workspace events. The overlay no longer clears merely
+for an active-window event. Actual workspace and layer transitions still trigger
+suspension. See [Slice 8](project/work/S008-keystroke-presentation.md) for the
+remaining work.
 
-A combination such as `Ctrl+W` currently displays a standalone `Ctrl` before
-`Ctrl+W`. The requested follow-up is to omit the standalone modifier and to
-start combining identical presses on the third press instead of the second.
-See [Slice 8](project/work/S008-keystroke-presentation.md) for the open work.
-
-The latest synthetic suite passed 43 tests. Live reconnect, lock and prompt
+The earlier synthetic suite passed 43 tests; the tests added or changed since
+then have not been run. Live reconnect, lock and prompt
 suppression timing, and OBS output-size readability still need verification.
 The saved OBS scene snapshot predates this browser source. Do not infer that the
 snapshot restores it.

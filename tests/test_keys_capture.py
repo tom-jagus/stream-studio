@@ -14,6 +14,7 @@ class CaptureEventTests(unittest.TestCase):
         self.capture = Capture.__new__(Capture)
         self.capture.keys = self.keys
         self.capture._down = {"one": set(), "two": set()}
+        self.capture._pending_modifiers = {}
         self.capture._state = Mock()
         self.capture._state.key_get_one_sym.return_value = 97
         self.capture._state.key_get_string.return_value = "a"
@@ -42,11 +43,15 @@ class CaptureEventTests(unittest.TestCase):
         ])
         self.assertEqual(self.capture._state.update_key.call_count, 2)
 
-    def test_released_and_pressed_again_increments_count(self):
+    def test_released_and_pressed_again_groups_on_third_press(self):
         self.event()
         self.event(value=0)
         self.event()
-        self.assertEqual(self.keys.snapshot()["keys"][0]["count"], 2)
+        self.assertEqual([entry["count"] for entry in self.keys.snapshot()["keys"]],
+                         [1, 1])
+        self.event(value=0)
+        self.event()
+        self.assertEqual(self.keys.snapshot()["keys"][0]["count"], 3)
 
     def test_duplicate_down_does_not_increment_count(self):
         self.event()
@@ -60,9 +65,62 @@ class CaptureEventTests(unittest.TestCase):
         self.event(code=self.codes.KEY_LEFTMETA, value=0)
         self.xkb.keysym_get_name = lambda _: "Super_R"
         self.event(code=self.codes.KEY_RIGHTMETA)
+        self.event(code=self.codes.KEY_RIGHTMETA, value=0)
         self.assertEqual(self.keys.snapshot()["keys"], [
-            {"text": "Super", "parts": ["Super"], "count": 2}
+            {"text": "Super", "parts": ["Super"], "count": 1},
+            {"text": "Super", "parts": ["Super"], "count": 1},
         ])
+
+    def test_ctrl_combination_does_not_show_standalone_modifier(self):
+        self.event(code=self.codes.KEY_LEFTCTRL)
+        self.assertEqual(self.keys.snapshot()["keys"], [])
+        self.event()
+        self.event(value=0)
+        self.event(code=self.codes.KEY_LEFTCTRL, value=0)
+        self.assertEqual(self.keys.snapshot()["keys"], [
+            {"text": "Ctrl+a", "parts": ["Ctrl", "a"], "count": 1}
+        ])
+
+    def test_multi_modifier_combination_has_no_standalone_entries(self):
+        self.event(code=self.codes.KEY_LEFTCTRL)
+        self.event(code=self.codes.KEY_LEFTSHIFT)
+        self.event(code=2)
+        self.event(code=2, value=0)
+        self.event(code=self.codes.KEY_LEFTSHIFT, value=0)
+        self.event(code=self.codes.KEY_LEFTCTRL, value=0)
+        self.assertEqual(self.keys.snapshot()["keys"], [
+            {"text": "Ctrl+Shift+1", "parts": ["Ctrl", "Shift", "1"], "count": 1}
+        ])
+
+    def test_unused_modifiers_display_on_release(self):
+        for code, label in [(29, "Ctrl"), (56, "Alt"), (125, "Super"), (42, "Shift")]:
+            with self.subTest(label=label):
+                self.event(code=code)
+                self.event(code=code, value=2)
+                self.event(code=code, value=0)
+                self.assertEqual(self.keys.snapshot()["keys"][-1]["parts"], [label])
+        self.assertEqual(len(self.keys.snapshot()["keys"]), 4)
+
+    def test_modifier_pressed_before_suspension_is_not_replayed(self):
+        self.event(code=29)
+        self.keys.observe("Desktop transition")
+        self.keys.observe(None)
+        self.event(code=29, value=0)
+        self.assertEqual(self.keys.snapshot()["keys"], [])
+        self.assertEqual(self.capture._pending_modifiers, {})
+
+    def test_suppressed_modifier_is_not_shown_on_release_after_resume(self):
+        self.capture._event("one", SimpleNamespace(type=1, code=29, value=1),
+                            self.evdev, self.xkb, None)
+        self.event(code=29, value=0)
+        self.assertEqual(self.keys.snapshot()["keys"], [])
+
+    def test_cross_device_combination_uses_modifier_without_standalone_entry(self):
+        self.event(code=29, path="one")
+        self.event(path="two")
+        self.event(code=29, value=0, path="one")
+        self.assertEqual(self.keys.snapshot()["keys"][0]["parts"], ["Ctrl", "a"])
+        self.assertEqual(len(self.keys.snapshot()["keys"]), 1)
 
     def test_unknown_repeat_is_rejected(self):
         with self.assertRaises(OSError):

@@ -2,7 +2,7 @@
 
 const display = document.getElementById("keys");
 const freshnessLimit = 750;
-const maxKeys = 8;
+const maxKeys = 11;
 const symbols = {
   BackSpace: "⌫", Backspace: "⌫", Space: "␣", space: "␣",
   Shift: "⇧", Shift_L: "⇧", Shift_R: "⇧",

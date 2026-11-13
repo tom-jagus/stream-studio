@@ -83,9 +83,6 @@ keyboard capture or privileged access is authorized by this brief.
 - What lock and authentication suppression timing and remaining races can be
   demonstrated on the actual setup?
 - Which visual defaults best support the demonstrations at OBS output size?
-- What causes the reported Herdr workspace shortcut behavior, and how should
-  the first two identical presses appear when a third triggers grouping? See
-  [Slice 8](S008-keystroke-presentation.md) for the observations.
 
 ## Risks
 
