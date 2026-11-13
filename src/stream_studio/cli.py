@@ -71,6 +71,8 @@ def main() -> int:
     commands.add_parser("status", help="Show service health and saved topic")
     commands.add_parser("serve", help="Run the service in the foreground")
     commands.add_parser("install-service", help="Create the user service, without starting it")
+    keys = commands.add_parser("keys", help="Control transient keystroke presentation")
+    keys.add_argument("action", choices=("on", "off", "status"))
     topic = commands.add_parser("topic", help="Save the topic; use an empty string to clear")
     topic.add_argument("text")
     args = parser.parse_args()
@@ -81,6 +83,12 @@ def main() -> int:
             return status()
         if args.command == "install-service":
             return install_service()
+        if args.command == "keys":
+            from .keys_control import request
+
+            result = request(args.action)
+            print(f"Keys: {result['state']} ({result['reason']})")
+            return 0
         if args.command == "topic":
             saved = write_topic(args.text)
             print(f"Topic saved: {saved}" if saved else "Topic cleared.")

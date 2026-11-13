@@ -26,10 +26,11 @@ preserves readable work and the reserved overlay area.
 - A bounded comparison of plausible output and frame-rate choices explains the
   trade-offs in text readability, motion, encoding load, and bandwidth. It
   distinguishes measured evidence from estimates and untested options.
-- Where separately authorized, a representative local OBS recording compares
-  candidates with normal work and the intended camera load. Results include
-  rendering/encoding lag and recording readability. If capture or configuration
-  changes are not authorized, the recommendation states the validation gap.
+- The original criterion calls for a separately authorized local OBS recording
+  to compare candidates under normal work and the intended camera load. The
+  current plan instead uses YouTube archives; resolve this conflict before
+  assessing the criterion. Compare rendering/encoding lag and readability, and
+  state validation gaps if the necessary tests are not authorized.
 - The result recommends a baseline and fallback, with the remaining checks
   needed before live use. A local recording alone is not claimed to prove
   network or streaming-platform performance.
@@ -120,6 +121,8 @@ preserves readable work and the reserved overlay area.
 
 ## Open questions
 
+- Should the original local-recording criterion be revised to match Tom's
+  preference for YouTube archives, or should both methods be retained?
 - Does 1440p30 retain sufficient processing and memory headroom with the full
   source load and normal work? Can camera-mode changes improve that headroom
   without reducing useful camera detail?

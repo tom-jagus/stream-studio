@@ -86,6 +86,10 @@ microphone audio or another application's voice call could still be heard.
 The sanitized export deliberately starts both audio sources muted for restore
 safety; that differs from their inspected local state.
 
+Before entering Privacy, run `stream keys off` if keystroke presentation is in
+use. Selecting the scene does not disable capture. See the
+[keystroke overlay guide](../docs/keystroke-overlay.md) for privacy limits.
+
 To select Privacy manually, click `PRIVACY` in OBS's Scenes list, or `Privacy`
 in the restored collection. In Studio Mode, selecting it changes Preview;
 transition it to Program before treating it as active. Scene selection does

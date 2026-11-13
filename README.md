@@ -8,10 +8,10 @@ The project brings together camera and audio settings, OBS scenes, keyboard
 controls, and local backgrounds and overlays. It is tailored to my desktop and
 workflow, with setup guidance so I can restore it without starting from scratch.
 
-The repository contains a Python topic-overlay service, project plans, camera
-experiment findings, and a sanitized OBS Working, Talking, and Privacy scene
-snapshot with restoration guidance. The saved scene snapshot predates the local
-browser overlay.
+The repository contains a Python local presentation service with a topic
+overlay and an experimental keystroke overlay, project plans, camera experiment
+findings, and a sanitized OBS Working, Talking, and Privacy scene snapshot with
+restoration guidance. The snapshot predates the browser overlays.
 
 ## Get started
 
@@ -33,9 +33,16 @@ Update the text with `stream topic "A new topic"`, clear it with
 The [topic overlay guide](docs/topic-overlay.md) covers setup, persistence,
 scrolling, fallback, and verification limits.
 
+For the experimental keystroke overlay, see the
+[keystroke overlay guide](docs/keystroke-overlay.md) for optional dependencies,
+keyboard permissions, OBS setup, and current limitations. Use `stream keys off`
+before sensitive input or entering Privacy or Break. Scene changes do not
+disable capture, and automatic suspension is not a confidentiality guarantee.
+
 ## Documentation
 
 - [Topic overlay](docs/topic-overlay.md): local service, CLI, and OBS setup.
+- [Keystroke overlay](docs/keystroke-overlay.md): setup, privacy, and limitations.
 - [Project charter](docs/project/charter.md): purpose, scope, and success criteria.
 - [Work index](docs/project/work.md): planned outcomes and current work.
 - [Camera experiments](docs/camera-experiments.md): findings and unresolved tuning.

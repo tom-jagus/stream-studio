@@ -1,0 +1,9 @@
+# Optional, security-sensitive installation artifact. Do not install automatically.
+# Grants the active local session access to keyboard interfaces on these models.
+# This is not limited to Stream Studio and is not a password-protection boundary.
+# Install as /etc/udev/rules.d/70-stream-studio-keyboards.rules only after approval.
+# Reload rules, then reconnect the selected keyboards to apply fresh ACLs.
+# To remove: delete that installed rule, reload rules, and reconnect keyboards.
+# Existing open descriptors must also be closed; removing a rule does not close them.
+SUBSYSTEM=="input", KERNEL=="event*", ENV{ID_INPUT_KEYBOARD}=="1", ENV{ID_VENDOR_ID}=="fee3", ENV{ID_MODEL_ID}=="0000", TAG+="uaccess"
+SUBSYSTEM=="input", KERNEL=="event*", ENV{ID_INPUT_KEYBOARD}=="1", ENV{ID_VENDOR_ID}=="55d4", ENV{ID_MODEL_ID}=="0461", TAG+="uaccess"

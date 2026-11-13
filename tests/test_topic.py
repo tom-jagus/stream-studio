@@ -72,12 +72,27 @@ class HTTPTests(unittest.TestCase):
                 self.assertNotIn("Access-Control-Allow-Origin", response.headers)
 
     def test_assets_are_available_and_paths_are_allowlisted(self):
-        for path in ["/topic", "/topic.js", "/topic.css"]:
+        for path in ["/topic", "/topic.js", "/topic.css", "/keys", "/keys.js", "/keys.css"]:
             with self.get(path) as response:
                 self.assertTrue(response.read())
         with self.assertRaises(urllib.error.HTTPError) as error:
             self.get("/../../topic.json")
         self.assertEqual(error.exception.code, 404)
+
+    def test_keys_endpoint_is_read_only_and_starts_empty(self):
+        from stream_studio.keys import Keys
+
+        self.server.keys = Keys()
+        with self.get("/api/keys") as response:
+            payload = json.load(response)
+        self.assertEqual(payload["state"], "disabled")
+        self.assertEqual(payload["keys"], [])
+        req = urllib.request.Request(self.base + "/api/keys", data=b"on",
+                                     headers={"Host": f"127.0.0.1:{PORT}"})
+        with self.assertRaises(urllib.error.HTTPError) as error:
+            self.opener.open(req, timeout=2)
+        self.assertEqual(error.exception.code, 501)
+        self.assertEqual(self.server.keys.status()["state"], "disabled")
 
     def test_rebinding_host_is_rejected(self):
         with self.assertRaises(urllib.error.HTTPError) as error:

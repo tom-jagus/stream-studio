@@ -9,7 +9,9 @@ on TTS. The HTTP interface is read-only and listens on `127.0.0.1:8766`.
 Requirements are Python 3.12 or newer, uv, a Linux systemd user session, OBS
 with Browser Source support, and a locally installed JetBrains Mono font.
 Installation may need network access to obtain build tools; runtime does not
-require external services or third-party Python dependencies.
+require external services or third-party Python dependencies for the topic
+feature. The optional [keystroke overlay](keystroke-overlay.md) has additional
+dependencies and privacy requirements.
 
 From the repository root:
 
@@ -102,9 +104,9 @@ Malformed saved state produces an error rather than silently clearing it;
 
 Tom reports that the overlay works in his aligned OBS layout and accepts the
 implementation. That is user-reported visual and operational evidence, not a
-record of automated tests or every failure case. The automated tests have not
-been run by the coding assistant. To run them from the checkout with Python
-3.12 or newer:
+record of every failure case. The latest synthetic suite, including topic and
+keystroke tests, passed 43 tests. To run it from the checkout with Python 3.12
+or newer:
 
 ```bash
 PYTHONPATH=src python -m unittest discover -s tests -v

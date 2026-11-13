@@ -15,6 +15,9 @@ ASSETS = {
     "/topic": ("topic.html", "text/html; charset=utf-8"),
     "/topic.css": ("topic.css", "text/css; charset=utf-8"),
     "/topic.js": ("topic.js", "text/javascript; charset=utf-8"),
+    "/keys": ("keys.html", "text/html; charset=utf-8"),
+    "/keys.css": ("keys.css", "text/css; charset=utf-8"),
+    "/keys.js": ("keys.js", "text/javascript; charset=utf-8"),
 }
 
 
@@ -34,6 +37,13 @@ class Handler(BaseHTTPRequestHandler):
                 self.send_error(503, "Topic state is unavailable")
                 return
             self.respond(body, "application/json; charset=utf-8")
+        elif path == "/api/keys":
+            keys = getattr(self.server, "keys", None)
+            if keys is None:
+                self.send_error(503, "Key presentation unavailable")
+                return
+            self.respond(json.dumps(keys.snapshot()).encode("utf-8"),
+                         "application/json; charset=utf-8")
         elif path in ASSETS:
             name, content_type = ASSETS[path]
             self.respond(
@@ -64,9 +74,23 @@ class Handler(BaseHTTPRequestHandler):
 
 
 def serve() -> None:
+    from .keys import Keys
+    from .keys_control import Control
+
+    keys = Keys()
     with ThreadingHTTPServer((HOST, PORT), Handler) as server:
+        server.keys = keys
+        control = Control(keys)
+        from .keys_capture import Capture
+
+        capture = Capture(keys)
         print(f"Topic overlay: {BASE_URL}/topic", flush=True)
+        print(f"Keys overlay: {BASE_URL}/keys (disabled)", flush=True)
         try:
             server.serve_forever()
         except KeyboardInterrupt:
             pass
+        finally:
+            keys.command("off")
+            capture.close()
+            control.close()

@@ -67,9 +67,10 @@ shared topic state, read-only loopback HTTP endpoint, and transparent styled
 browser page. The [operating guide](../../topic-overlay.md) documents setup,
 state, fallback, and verification limits.
 
-Automated tests were written but not run by the assistant. The failure-recovery
-and persistence task remains unchecked because separate execution evidence was
-not supplied. Acceptance does not establish that every error case was exercised.
+At acceptance, automated tests had been written but not run by the assistant.
+A later synthetic suite, including topic tests, passed 43 tests. The manual
+failure-recovery and persistence task remains unchecked; that later run does not
+establish that every error case or manual check was exercised.
 The repository OBS snapshot predates the new Browser Source and has not been
 refreshed; the accepted local placement is not preserved by that snapshot.
 
