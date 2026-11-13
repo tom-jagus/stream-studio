@@ -33,7 +33,7 @@ class PreviewTests(unittest.TestCase):
             self.assertFalse(preview.preview_process(123))
 
     def test_existing_window_is_positioned_without_launch(self):
-        window = {"address": "0x123"}
+        window = {"address": "0x123", "pinned": True}
         with patch("stream_studio.preview.windows", return_value=[window]), \
              patch("stream_studio.preview.geometry", return_value=(2400, 30, 400, 870)), \
              patch("stream_studio.preview.subprocess.Popen") as launch, \
@@ -41,6 +41,14 @@ class PreviewTests(unittest.TestCase):
             self.assertEqual(preview.command("on"), "open")
             launch.assert_not_called()
             self.assertEqual(dispatch.call_count, 3)
+
+    def test_unknown_pin_state_does_not_dispatch(self):
+        with patch("stream_studio.preview.windows", return_value=[{"address": "0x123"}]), \
+             patch("stream_studio.preview.geometry", return_value=(2400, 30, 400, 870)), \
+             patch("stream_studio.preview.dispatch") as dispatch:
+            with self.assertRaises(ValueError):
+                preview.command("on")
+            dispatch.assert_not_called()
 
     def test_status_and_toggle_close_only_matching_window(self):
         window = {"address": "0x123", "initialClass": preview.APP_CLASS}
@@ -73,14 +81,16 @@ class PreviewTests(unittest.TestCase):
             launch.assert_not_called()
 
     def test_open_targets_only_new_preview(self):
-        window = {"address": "0x123", "class": preview.APP_CLASS}
+        window = {"address": "0x123", "class": preview.APP_CLASS, "pinned": False}
         with patch("stream_studio.preview.windows", side_effect=[[], [window]]), \
              patch("stream_studio.preview.geometry", return_value=(2400, 30, 400, 870)), \
              patch("stream_studio.preview.subprocess.Popen", return_value=Mock()) as launch, \
              patch("stream_studio.preview.dispatch") as dispatch:
             self.assertEqual(preview.command("on"), "open")
             self.assertIn("--class=" + preview.APP_CLASS, launch.call_args.args[0])
-            self.assertEqual(dispatch.call_count, 3)
+            self.assertEqual(dispatch.call_count, 4)
+            self.assertEqual(dispatch.call_args_list[-1].args[0],
+                             'hl.dsp.window.pin({ window = "address:0x123" })')
             for call in dispatch.call_args_list:
                 self.assertIn("address:0x123", call.args[0])
 

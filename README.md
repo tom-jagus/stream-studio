@@ -46,8 +46,10 @@ For YouTube chat setup and operation, see the
 ### Desktop preview
 
 On Hyprland, `stream preview on` opens a Chromium app window with the topic,
-keystrokes, and chat. It floats in the reserved right-hand area of `DP-1`.
-Use `stream preview off`, `stream preview toggle`, or `stream preview status`
+keystrokes, and chat. It floats in the reserved right-hand area of `DP-1` and
+is pinned across that monitor's workspaces. Key presentation still follows its
+workspace restrictions. Use `stream preview off`, `stream preview toggle`, or
+`stream preview status`
 to control or check the window. These commands do not change the desktop layout.
 The local service must be running for the preview page to load.
 

@@ -107,9 +107,14 @@ def command(action):
                 raise ValueError("Multiple preview windows found; close extras manually")
             if found:
                 target = selector(found[0])
+                pinned = found[0].get("pinned")
+                if not isinstance(pinned, bool):
+                    raise ValueError("Cannot determine whether preview is pinned")
                 dispatch(f'hl.dsp.window.float({{ window = "{target}", action = "set" }})')
                 dispatch(f'hl.dsp.window.resize({{ window = "{target}", x = {width}, y = {height}, relative = false }})')
                 dispatch(f'hl.dsp.window.move({{ window = "{target}", x = {x}, y = {y}, relative = false }})')
+                if not pinned:
+                    dispatch(f'hl.dsp.window.pin({{ window = "{target}" }})')
                 return "open"
             time.sleep(0.1)
         raise ValueError("Preview window did not appear; check Chromium and Hyprland")
