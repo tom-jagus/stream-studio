@@ -71,8 +71,8 @@ At acceptance, automated tests had been written but not run by the assistant.
 A later synthetic suite, including topic tests, passed 43 tests. The manual
 failure-recovery and persistence task remains unchecked; that later run does not
 establish that every error case or manual check was exercised.
-The repository OBS snapshot predates the new Browser Source and has not been
-refreshed; the accepted local placement is not preserved by that snapshot.
+At acceptance, the repository snapshot predated the Browser Source. The newer
+[OBS snapshot](../../../obs/README.md) includes it; restoration remains untested.
 
 ## Boundaries
 

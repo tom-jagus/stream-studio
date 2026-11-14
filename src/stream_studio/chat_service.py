@@ -63,10 +63,21 @@ def resolve_chat(identifier, key):
     if len(body) > 1_000_000:
         raise ValueError("YouTube response too large")
     payload = json.loads(body)
-    items = payload.get("items", [])
-    chat = items[0].get("liveStreamingDetails", {}).get("activeLiveChatId") if items else None
-    if not isinstance(chat, str) or not chat:
+    if not isinstance(payload, dict) or not isinstance(payload.get("items"), list):
+        raise ValueError("Invalid YouTube response")
+    items = payload["items"]
+    if not items:
         raise ValueError("Broadcast unavailable, not live, or chat disabled")
+    if not isinstance(items[0], dict):
+        raise ValueError("Invalid YouTube response")
+    details = items[0].get("liveStreamingDetails", {})
+    if not isinstance(details, dict):
+        raise ValueError("Invalid YouTube response")
+    chat = details.get("activeLiveChatId")
+    if chat is None or chat == "":
+        raise ValueError("Broadcast unavailable, not live, or chat disabled")
+    if not isinstance(chat, str):
+        raise ValueError("Invalid YouTube response")
     return chat
 
 

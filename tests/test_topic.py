@@ -72,12 +72,20 @@ class HTTPTests(unittest.TestCase):
                 self.assertNotIn("Access-Control-Allow-Origin", response.headers)
 
     def test_assets_are_available_and_paths_are_allowlisted(self):
-        for path in ["/topic", "/topic.js", "/topic.css", "/keys", "/keys.js", "/keys.css"]:
+        for path in ["/topic", "/topic.js", "/topic.css", "/keys", "/keys.js", "/keys.css",
+                     "/chat", "/chat-render.js", "/chat.js", "/chat.css",
+                     "/preview", "/preview.js", "/preview.css"]:
             with self.get(path) as response:
                 self.assertTrue(response.read())
         with self.assertRaises(urllib.error.HTTPError) as error:
             self.get("/../../topic.json")
         self.assertEqual(error.exception.code, 404)
+
+    def test_chat_pages_load_shared_renderer_before_page_script(self):
+        for path, script in (("/chat", "/chat.js"), ("/preview", "/preview.js")):
+            with self.subTest(path=path), self.get(path) as response:
+                html = response.read().decode("utf-8")
+            self.assertLess(html.index('src="/chat-render.js"'), html.index(f'src="{script}"'))
 
     def test_keys_endpoint_is_read_only_and_starts_empty(self):
         from stream_studio.keys import Keys

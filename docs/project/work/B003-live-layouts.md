@@ -34,9 +34,9 @@ right quarter for stream overlays. The laptop's 1920 × 1080 display is outside
 the initial capture scope. Preserve the full monitor source without resizing,
 cropping, or cutting it into a smaller capture region. Sidebar overlays may
 cover the reserved right quarter. Choose whole-frame output scaling through
-discovery rather than treating native 1440p output as a requirement. Tom reports
-that the current stream is configured for 1440p and is being used to test
-reliability; that configuration is a comparison baseline, not a validated choice.
+discovery rather than treating native 1440p output as a requirement. An earlier
+1440p stream was a comparison baseline, not a validated choice. The later
+[performance guide](../../streaming-performance.md) records a 1080p30 baseline.
 The reserved area is not a confidentiality boundary.
 
 YouTube is the initial streaming destination. Routine simultaneous local
@@ -70,8 +70,9 @@ that conceals captures and excludes the microphone without a browser background
 or stopping the broadcast. Leave desktop audio and music unchanged; separate
 music routing is outside the initial scope. The microphone may become audible
 again on leaving Privacy if its shared source was not separately muted. Further
-presentation belongs to B004. Local informational overlays and input visualization are
-separate outcomes in B004 and B006, not prerequisites for a usable initial layout.
+presentation belongs to Brief 4. Local informational overlays and input
+visualization are separate outcomes in Brief 4 and Brief 6, not prerequisites
+for a usable initial layout.
 
 ## Acceptance criteria
 

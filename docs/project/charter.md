@@ -42,8 +42,9 @@ initially static and later animated with local daylight and weather variation.
 
 A dedicated Vial layer, host-side handling, and OBS WebSocket are the intended
 control path. Keystroke presentation is system-wide and explicitly enabled,
-with workspace-based suspension. Styling follows the system's Catppuccin theme. Reusable logo design belongs to `brand-identity`;
-this project integrates approved assets, but a final logo is not a prerequisite.
+with workspace-based suspension. Styling follows the system's Catppuccin theme.
+Reusable logo design belongs to `brand-identity`; this project integrates
+approved assets, but a final logo is not a prerequisite.
 
 Keep credentials, exact private location, and confidential information out of
 versioned configuration and browser-visible data. Inspect OBS exports before

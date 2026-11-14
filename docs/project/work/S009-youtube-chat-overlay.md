@@ -64,13 +64,18 @@ implemented. Tom reports that a live YouTube connection and OBS presentation
 work. The synthetic suite passed 75 tests, including chat state, expiry, URL,
 settings, control, and protobuf round-trip checks. The round-trip alone does not
 prove wire interoperability; the live connection provides separate evidence.
-Setup and operating guidance is in [YouTube chat overlay](../../youtube-chat-overlay.md).
+Setup and operating guidance is in the
+[operating guide](../../topic-overlay.md#youtube-chat-overlay).
 
-The slice is not yet accepted as complete. Synthetic coverage does not establish
-API failure handling, retry and reconnect, browser rendering, or all stopping
-paths. The CLI also limits expiry input to nine digits, while the criterion
-specifies positive whole numbers without that limit. Further review and targeted
-checks are needed before acceptance.
+Tom accepted a follow-up that validates malformed YouTube lookup responses and
+shares chat rendering between the overlay and preview. Regression tests were
+added for response validation, retry, asset delivery, and script order, but they
+have not been run. This acceptance does not complete the slice.
+
+Failure handling, reconnect, browser rendering, and all stopping paths remain
+incompletely verified. The CLI also limits expiry input to nine digits, while
+the criterion specifies positive whole numbers without that limit. Further
+review and targeted checks are needed before accepting the slice.
 
 ## Tasks
 

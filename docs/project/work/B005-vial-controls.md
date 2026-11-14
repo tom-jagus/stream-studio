@@ -46,7 +46,7 @@ toggles. Privacy scene entry does not itself disable the keystroke overlay.
 ## Current evidence
 
 Tom reports that Vial scene bindings and the preview confirmation work. The
-wrapper and its [setup guide](../../obs-scene-controls.md) are in place.
+wrapper and its [setup guide](../../topic-overlay.md#obs-scene-controls) are in place.
 Failure reporting and restoration remain unverified. The preview reports the
 last checked scene, not live changes made directly in OBS. This brief remains
 Draft while the remaining actions and acceptance evidence are unsettled.

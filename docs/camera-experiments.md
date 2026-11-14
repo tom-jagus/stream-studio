@@ -3,7 +3,7 @@
 Supporting evidence for
 [B001, repeatable camera setup](project/work/B001-repeatable-cameras.md).
 These are historical observations, not a fresh device inspection or an accepted
-preset. B001 remains Draft during the documentation migration.
+preset. Brief 1 remains Draft.
 
 ## Status after 2026-10-22
 

@@ -59,9 +59,8 @@ inspect it before using it. Complete these manual steps:
    Privacy image points to the supplied card in this checkout. Check that it
    loads and fills the canvas.
 4. Start the local presentation service and check the topic, keys, and chat
-   Browser Sources. Follow the [topic](../docs/topic-overlay.md),
-   [keys](../docs/keystroke-overlay.md), and
-   [chat](../docs/youtube-chat-overlay.md) guides for their separate setup.
+   Browser Sources. Follow the [operating guide](../docs/topic-overlay.md) for
+   their separate setup.
 5. Check each scene at output size, including the new scene, source ordering,
    camera framing, the opaque sidebar, and browser overlays. Verify Privacy
    video and output audio, then check the intended transition and microphone
@@ -93,8 +92,8 @@ establish immediate concealment. Check composed video and audio with harmless
 content. In Studio Mode, selecting Privacy changes Preview; transition it to
 Program before treating it as active. Selecting a scene does not stop the
 broadcast or disable key capture. Use `stream keys off` before Privacy, Break,
-or sensitive input. See the [keystroke guide](../docs/keystroke-overlay.md) for
-its limits.
+or sensitive input. See the [operating guide](../docs/topic-overlay.md#keystroke-overlay)
+for its limits.
 
 The snapshots are point-in-time artifacts, not automatic synchronization.
 Review future scene changes and sanitize a fresh export rather than copying the

@@ -1,22 +1,20 @@
 # Work
 
-Item files own their status and unresolved questions. Draft status does not
-reverse the agreed project scope or erase the camera experiments already
-performed.
+Item files own their status and unresolved questions.
 
 | Item | Outcome | Status | Blocker |
 |---|---|---|---|
-| [B001](work/B001-repeatable-cameras.md) | Restore accepted face and overhead camera settings. | Draft | Lighting, image acceptance, and persistence remain unresolved. |
-| [B002](work/B002-repeatable-audio.md) | Restore audio settings and validate audio/video together. | Draft | Hardware, processing, and sequencing need inspection or agreement. |
-| [B003](work/B003-live-layouts.md) | Provide readable Working and distinct Talking layouts. | In progress | Privacy and restoration slices remain outstanding. |
-| [S001](work/S001-output-capture-discovery.md) | Recommend a practical output and full-monitor capture baseline. | To do | Read-only inspection permitted; changes and test broadcasts need approval. |
-| [S004](work/S004-simple-privacy.md) | Conceal captures and exclude the microphone without browser dependencies. | In progress | Immediate entry and output tests remain outstanding. |
-| [S005](work/S005-layout-restoration.md) | Restore and verify accepted layouts safely. | To do | S004; safe restoration-test approval. |
+| [Brief 1](work/B001-repeatable-cameras.md) | Restore accepted face and overhead camera settings. | Draft | Lighting, image acceptance, and persistence remain unresolved. |
+| [Brief 2](work/B002-repeatable-audio.md) | Restore audio settings and validate audio/video together. | Draft | Hardware, processing, and sequencing need inspection or agreement. |
+| [Brief 3](work/B003-live-layouts.md) | Provide readable Working and distinct Talking layouts. | In progress | Privacy and restoration slices remain outstanding. |
+| [Slice 1](work/S001-output-capture-discovery.md) | Recommend a practical output and full-monitor capture baseline. | To do | Read-only inspection permitted; changes and test broadcasts need approval. |
+| [Slice 4](work/S004-simple-privacy.md) | Conceal captures and exclude the microphone without browser dependencies. | In progress | Immediate entry and output tests remain outstanding. |
+| [Slice 5](work/S005-layout-restoration.md) | Restore and verify accepted layouts safely. | To do | Slice 4; safe restoration-test approval. |
 | [Brief 4](work/B004-local-presentation.md) | Supply local presentation and complete the six-scene collection. | In progress | Room artwork and later presentation details remain unsettled. |
 | [Slice 9](work/S009-youtube-chat-overlay.md) | Show recent YouTube chat in a local OBS overlay. | In progress | Retry and failure-path coverage and expiry input limit need review. |
 | [Brief 5](work/B005-vial-controls.md) | Control OBS from the Vial streaming layer without OBS focus. | Draft | Additional actions, failure reporting, and restoration remain open. |
 | [Brief 6](work/B006-system-wide-keystroke-presentation.md) | Present opt-in system-wide keystrokes with workspace suspension. | In progress | Live lock and authentication-prompt checks remain. |
 | [Slice 8](work/S008-keystroke-presentation.md) | Present external-keyboard input with controls and suspension in OBS. | In progress | Live lock and authentication-prompt suppression and timing remain unverified. |
-| [B007](work/B007-environmental-room.md) | Add daylight, weather, and animation to the shared room. | Draft | Core presentation and environmental choices remain outstanding. |
+| [Brief 7](work/B007-environmental-room.md) | Add daylight, weather, and animation to the shared room. | Draft | Core presentation and environmental choices remain outstanding. |
 
 Completed items remain in [work/](work/).

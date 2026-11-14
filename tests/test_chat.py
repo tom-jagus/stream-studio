@@ -1,8 +1,11 @@
+import io
+import json
 import tempfile
 import unittest
 from datetime import datetime, timezone
 from pathlib import Path
-from unittest.mock import patch
+from types import SimpleNamespace
+from unittest.mock import Mock, patch
 
 from stream_studio.chat import Chat, MAX_MESSAGES, video_id
 
@@ -99,6 +102,59 @@ class ChatProtoTests(unittest.TestCase):
 
 
 class ChatServiceTests(unittest.TestCase):
+    def test_lookup_response_validation(self):
+        from stream_studio.chat_service import resolve_chat
+
+        cases = [
+            ({"items": [{"liveStreamingDetails": {"activeLiveChatId": "chat-id"}}]},
+             "chat-id", None),
+            ({"items": []}, None, "Broadcast unavailable, not live, or chat disabled"),
+            ({"items": [{}]}, None, "Broadcast unavailable, not live, or chat disabled"),
+            ([], None, "Invalid YouTube response"),
+            ({}, None, "Invalid YouTube response"),
+            ({"items": {}}, None, "Invalid YouTube response"),
+            ({"items": [None]}, None, "Invalid YouTube response"),
+            ({"items": [{"liveStreamingDetails": []}]}, None, "Invalid YouTube response"),
+            ({"items": [{"liveStreamingDetails": {"activeLiveChatId": 42}}]},
+             None, "Invalid YouTube response"),
+        ]
+        for payload, expected, error in cases:
+            with self.subTest(payload=payload):
+                response = io.BytesIO(json.dumps(payload).encode())
+                opener = Mock()
+                opener.open.return_value = response
+                with patch("stream_studio.chat_service.urllib.request.build_opener", return_value=opener):
+                    if error:
+                        with self.assertRaisesRegex(ValueError, error):
+                            resolve_chat("abcdefghijk", "key")
+                    else:
+                        self.assertEqual(resolve_chat("abcdefghijk", "key"), expected)
+
+    def test_malformed_lookup_is_reported_and_retried_until_cancelled(self):
+        from stream_studio.chat_service import ChatService
+
+        class FakeRpcError(Exception):
+            pass
+
+        grpc = SimpleNamespace(RpcError=FakeRpcError)
+        cancelled = Mock()
+        cancelled.is_set.return_value = False
+        cancelled.wait.side_effect = [False, True]
+        with tempfile.TemporaryDirectory() as directory, \
+             patch.dict("os.environ", {"XDG_CONFIG_HOME": directory}), \
+             patch.dict("sys.modules", {"grpc": grpc}), \
+             patch("stream_studio.chat_proto.messages", return_value=(None, None)), \
+             patch("stream_studio.chat_service.read_key", return_value="key"), \
+             patch("stream_studio.chat_service.resolve_chat", side_effect=ValueError("Invalid YouTube response")) as lookup:
+            service = ChatService()
+            generation = service.chat.start()
+            service._run("abcdefghijk", generation, cancelled)
+            self.assertEqual(lookup.call_count, 2)
+            self.assertEqual([call.args[0] for call in cancelled.wait.call_args_list], [1, 2])
+            self.assertEqual(service.chat.status()["state"], "error")
+            self.assertEqual(service.chat.status()["reason"], "Invalid YouTube response")
+            service.close()
+
     def test_expiry_persists_and_invalid_does_not_replace_it(self):
         from stream_studio.chat_service import ChatService
         with tempfile.TemporaryDirectory() as directory, patch.dict("os.environ", {"XDG_CONFIG_HOME": directory}):

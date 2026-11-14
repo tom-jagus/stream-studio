@@ -21,6 +21,7 @@ ASSETS = {
     "/keys.js": ("keys.js", "text/javascript; charset=utf-8"),
     "/chat": ("chat.html", "text/html; charset=utf-8"),
     "/chat.css": ("chat.css", "text/css; charset=utf-8"),
+    "/chat-render.js": ("chat-render.js", "text/javascript; charset=utf-8"),
     "/chat.js": ("chat.js", "text/javascript; charset=utf-8"),
     "/preview": ("preview.html", "text/html; charset=utf-8"),
     "/preview.css": ("preview.css", "text/css; charset=utf-8"),
