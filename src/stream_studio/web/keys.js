@@ -8,8 +8,8 @@ const symbols = {
   Shift: "⇧", Shift_L: "⇧", Shift_R: "⇧",
   Return: "↵", KP_Enter: "↵", Tab: "⇥", ISO_Left_Tab: "⇤",
   Left: "←", Right: "→", Up: "↑", Down: "↓",
-  Delete: "⌦", Home: "↖", End: "↘", Prior: "⇞", Next: "⇟",
-  Escape: "⎋", Caps_Lock: "⇪",
+  Delete: "⌦", Home: "Home", End: "↘", Prior: "Page up", Next: "Page down",
+  Escape: "Esc", Caps_Lock: "⇪",
   Ctrl: "Ctrl", Control_L: "Ctrl", Control_R: "Ctrl",
   Alt: "Alt", Alt_L: "Alt", Alt_R: "Alt",
   Super: "Super", Super_L: "Super", Super_R: "Super"
