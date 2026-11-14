@@ -80,6 +80,8 @@ output with harmless content before streaming.
 - [YouTube chat overlay](docs/youtube-chat-overlay.md): API setup and operation.
 - [Project charter](docs/project/charter.md): purpose, scope, and success criteria.
 - [Work index](docs/project/work.md): planned outcomes and current work.
+- [Streaming performance](docs/streaming-performance.md): current laptop
+  configuration, resource findings, and workload checks.
 - [Camera experiments](docs/camera-experiments.md): findings and unresolved tuning.
 - [OBS scene snapshots](obs/README.md): saved scenes, settings, and restore limits.
 
