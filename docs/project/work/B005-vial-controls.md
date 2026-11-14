@@ -17,18 +17,15 @@ microphone actions accessible during a stream.
 
 ## Boundaries
 
-The agreed path is a Vial layer key, host-side handler, control action, and OBS
-WebSocket. Hyprland bindings are not the intended control interface. A normal
-Vial macro does not itself send network requests.
+The selected path uses Vial's Ctrl+Alt+Shift function-key combinations,
+Hyprland bindings, a local command, and OBS WebSocket. The scene wrapper selects
+and checks the Program scene, then records the last confirmation for the
+preview. It does not continuously monitor OBS. Keep credentials outside
+browser-visible assets and avoid focus-dependent typed commands.
 
-Dedicated spare keycodes such as F13 through F24 are a recommended bridge, not
-selected bindings. Check firmware and Wayland support before choosing the
-host-side mechanism. Avoid focus-dependent macros that type shell commands.
-Keep control access local and credentials outside browser-visible assets.
-
-Explicit scene selection and mute/unmute actions are recommended over blind
-toggles. Controls should reflect actual OBS state rather than assume success.
-The exact bindings and position in the implementation sequence remain open.
+Explicit scene selection is in use. Microphone and other presentation actions
+remain undecided; separate mute and unmute actions are preferable to blind
+toggles. Privacy scene entry does not itself disable the keystroke overlay.
 
 ## Acceptance criteria
 
@@ -43,6 +40,13 @@ The exact bindings and position in the implementation sequence remain open.
 
 ## Open questions
 
-- Which scene, microphone, and presentation actions need dedicated controls?
-- Which keycodes, host-side handler, and state feedback mechanism are suitable?
-- Where should this work fall relative to layouts and the local service?
+- Are microphone or other presentation actions needed beyond scene selection?
+- Has failure reporting and restoration been checked on the actual setup?
+
+## Current evidence
+
+Tom reports that Vial scene bindings and the preview confirmation work. The
+wrapper and its [setup guide](../../obs-scene-controls.md) are in place.
+Failure reporting and restoration remain unverified. The preview reports the
+last checked scene, not live changes made directly in OBS. This brief remains
+Draft while the remaining actions and acceptance evidence are unsettled.

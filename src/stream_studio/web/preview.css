@@ -5,6 +5,8 @@ section { flex: none; min-width: 0; }
 h1 { margin: 0 0 6px; color: #cba6f7; font-size: 16px; }
 h1 span { color: #a6adc8; font-size: 12px; font-weight: normal; }
 p { margin: 0; overflow-wrap: anywhere; max-height: 25vh; overflow: auto; }
+#scene-checked { color: #a6adc8; font-size: 12px; }
+#scene-error { color: #f38ba8; }
 #keys { padding: 4px 0 10px; font-size: 18px; gap: 4px; }
 .key { min-width: 30px; min-height: 32px; padding: 3px 5px; }
 .join { font-size: 12px; }

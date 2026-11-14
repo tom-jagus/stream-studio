@@ -74,6 +74,8 @@ active-window and title events but no workspace events. The implementation now
 ignores active-window events while retaining workspace and layer invalidation.
 The display supports up to eleven entries, omits standalone modifiers used in
 combinations, and groups identical consecutive presses on the third press.
+Tom reports that the small disabled-state message works. It appears on both
+the OBS page and desktop preview.
 
 The current synthetic suite passed 75 tests across the project. Tom reports
 that both keyboard selection and controls work, along with workspace gating,

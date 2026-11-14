@@ -87,6 +87,12 @@ async function poll() {
     lastSuccess = performance.now();
     if (payload.state !== "presenting") {
       clear();
+      if (payload.state === "disabled") {
+        const message = document.createElement("span");
+        message.className = "keys-disabled";
+        message.textContent = "Keys display disabled";
+        display.append(message);
+      }
       return;
     }
     if (generation !== payload.generation) clear();

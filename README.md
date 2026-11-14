@@ -52,12 +52,20 @@ For YouTube chat setup and operation, see the
 ### Desktop preview
 
 On Hyprland, `stream preview on` opens a Chromium app window with the topic,
-keystrokes, and chat. It floats in the reserved right-hand area of `DP-1`,
-inset by three logical pixels at the left edge, and is pinned across that
+keystrokes, chat, and the last confirmed OBS scene. It floats in the reserved
+right-hand area of `DP-1`, inset by three logical pixels at the left edge, and
+is pinned across that
 monitor's workspaces. Key presentation still follows its workspace restrictions.
 Use `stream preview off`, `stream preview toggle`, or `stream preview status` to
 control or check the window. These commands do not change the desktop layout.
 The local service must be running for the preview page to load.
+
+The preview requires Chromium, Hyprland window dispatch support, and exactly
+one connected monitor named `DP-1` with no transform and a positive scale.
+Hyprland must already report a right-hand reserved area wider than three logical
+pixels; the preview does not create it. Inspect `hyprctl monitors` and restore
+the reservation in your desktop configuration if needed. The reservation is
+not managed by this repository.
 
 The preview remains part of a full-monitor capture. An opaque OBS sidebar can
 visually cover it, but does not exclude it from capture. Check the actual OBS
@@ -67,6 +75,8 @@ output with harmless content before streaming.
 
 - [Topic overlay](docs/topic-overlay.md): local service, CLI, and OBS setup.
 - [Keystroke overlay](docs/keystroke-overlay.md): setup, privacy, and limitations.
+- [OBS scene controls](docs/obs-scene-controls.md): Vial bindings, connection
+  setup, and preview status.
 - [YouTube chat overlay](docs/youtube-chat-overlay.md): API setup and operation.
 - [Project charter](docs/project/charter.md): purpose, scope, and success criteria.
 - [Work index](docs/project/work.md): planned outcomes and current work.

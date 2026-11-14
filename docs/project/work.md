@@ -14,7 +14,7 @@ performed.
 | [S005](work/S005-layout-restoration.md) | Restore and verify accepted layouts safely. | To do | S004; safe restoration-test approval. |
 | [Brief 4](work/B004-local-presentation.md) | Supply local presentation and complete the six-scene collection. | In progress | Room artwork and later presentation details remain unsettled. |
 | [Slice 9](work/S009-youtube-chat-overlay.md) | Show recent YouTube chat in a local OBS overlay. | In progress | Retry and failure-path coverage and expiry input limit need review. |
-| [B005](work/B005-vial-controls.md) | Control OBS from the Vial streaming layer without OBS focus. | Draft | Actions, host-side mechanism, and sequencing remain open. |
+| [Brief 5](work/B005-vial-controls.md) | Control OBS from the Vial streaming layer without OBS focus. | Draft | Additional actions, failure reporting, and restoration remain open. |
 | [Brief 6](work/B006-system-wide-keystroke-presentation.md) | Present opt-in system-wide keystrokes with workspace suspension. | In progress | Live lock and authentication-prompt checks remain. |
 | [Slice 8](work/S008-keystroke-presentation.md) | Present external-keyboard input with controls and suspension in OBS. | In progress | Live lock and authentication-prompt suppression and timing remain unverified. |
 | [B007](work/B007-environmental-room.md) | Add daylight, weather, and animation to the shared room. | Draft | Core presentation and environmental choices remain outstanding. |

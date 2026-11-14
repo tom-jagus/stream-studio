@@ -72,7 +72,9 @@ are removed when the row is full or too narrow. Entries expire after four
 seconds, refreshed by a consecutive repeat. Held-key auto-repeat is ignored.
 The first two identical presses appear separately; the third combines them into
 one entry with a count. A modifier used in a combination does not appear as a
-separate entry; a modifier pressed alone appears when released.
+separate entry; a modifier pressed alone appears when released. When manually
+disabled, the OBS page and desktop preview show a small gray "Keys display
+disabled" message. Suspended and unavailable states clear the key display.
 
 Presentation is allowed only on focused workspaces 1 through 5. Other, special,
 unknown, or uncertain workspaces suspend it, as do observed lock and Omarchy

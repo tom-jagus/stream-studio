@@ -1,6 +1,7 @@
 """Read-only loopback HTTP server for the OBS browser source."""
 
 import json
+from pathlib import Path
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from importlib.resources import files
 from urllib.parse import urlsplit
@@ -41,6 +42,20 @@ class Handler(BaseHTTPRequestHandler):
                 body = json.dumps({"topic": read_topic()}).encode("utf-8")
             except (OSError, ValueError):
                 self.send_error(503, "Topic state is unavailable")
+                return
+            self.respond(body, "application/json; charset=utf-8")
+        elif path == "/api/scene":
+            try:
+                state_path = Path.home() / ".local/share/stream-studio/scene.json"
+                state = json.loads(state_path.read_text(encoding="utf-8"))
+                if (not isinstance(state, dict)
+                        or not all(state.get(key) is None or isinstance(state.get(key), str)
+                                   for key in ("scene", "checked_at", "error"))):
+                    raise ValueError("Invalid scene state")
+                body = json.dumps({key: state.get(key) for key in
+                                   ("scene", "checked_at", "error")}).encode("utf-8")
+            except (OSError, UnicodeError, ValueError):
+                self.send_error(503, "Scene state unavailable")
                 return
             self.respond(body, "application/json; charset=utf-8")
         elif path == "/api/keys":

@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+# Switch an OBS Program scene and record the last confirmed result.
+set -u
+umask 077
+
+if [[ $# != 1 || -z $1 || $1 == *$'\n'* ]]; then
+    printf 'Usage: obs-scene-switch "SCENE NAME"\n' >&2
+    exit 2
+fi
+
+target=$1
+directory="$HOME/.local/share/stream-studio"
+state="$directory/scene.json"
+connection="$directory/obs-connection"
+obs="$HOME/.local/bin/obs-cmd"
+
+mkdir -p "$directory" || exit 1
+exec 9>"$directory/scene.lock" || exit 1
+flock -x 9 || exit 1
+
+previous='{"scene":null,"checked_at":null}'
+if [[ -f $state ]]; then
+    previous=$(jq -c '{scene: (if (.scene | type) == "string" then .scene else null end), checked_at: (if (.checked_at | type) == "string" then .checked_at else null end)}' "$state" 2>/dev/null) || previous='{"scene":null,"checked_at":null}'
+fi
+
+error=''
+if ! source "$connection" 2>/dev/null; then
+    error='OBS connection settings unavailable'
+elif ! timeout 5 "$obs" scene switch "$target" >/dev/null 2>&1; then
+    error='OBS scene switch failed'
+elif ! current=$(timeout 5 "$obs" scene current 2>/dev/null); then
+    error='Could not confirm OBS Program scene'
+elif [[ $current != $'Executing: Get current scene\n'"Current scene: $target" ]]; then
+    error='OBS did not confirm the requested scene'
+fi
+
+temporary=$(mktemp "$directory/.scene-XXXXXXXX") || exit 1
+trap 'rm -f "$temporary"' EXIT
+if [[ -n $error ]]; then
+    jq --arg error "$error" '. + {error: $error}' <<<"$previous" >"$temporary" || exit 1
+else
+    checked_at=$(date --iso-8601=seconds) || exit 1
+    jq -n --arg scene "$target" --arg checked_at "$checked_at" \
+        '{scene: $scene, checked_at: $checked_at, error: null}' >"$temporary" || exit 1
+fi
+mv -f -- "$temporary" "$state" || exit 1
+
+if [[ -n $error ]]; then
+    printf '%s\n' "$error" >&2
+    exit 1
+fi
+printf 'Confirmed Program scene: %s\n' "$target"

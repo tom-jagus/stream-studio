@@ -13,6 +13,7 @@ html, body { margin: 0; background: transparent; overflow: hidden; }
   line-height: 1.25;
   color: #cdd6f4;
 }
+.keys-disabled { color: #a6adc8; font-size: 14px; }
 .key {
   display: inline-flex;
   flex: none;
